@@ -1,0 +1,206 @@
+// Import variables first
+@use "variables" as *;
+
+// Global styles
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Root element
+#root {
+  height: 100%;
+}
+
+// App container
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Main content area
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// Basic utility classes
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Basic responsive utilities
+@media (max-width: 575px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1399px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+@media (min-width: 0) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .visible-xl {
+    display: block !important;
+  }
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-300);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--secondary-400);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background-secondary);
+}
+
+// Selection styling
+::selection {
+  background-color: var(--primary-200);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--primary-200);
+  color: var(--text-primary);
+}
+
+// Focus visible polyfill
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: #000000;
+    --border-secondary: #000000;
+    --shadow-sm: 0 1px 2px 0 #000000;
+    --shadow-md: 0 4px 6px -1px #000000, 0 2px 4px -2px #000000;
+    --shadow-lg: 0 10px 15px -3px #000000, 0 4px 6px -4px #000000;
+    --shadow-xl: 0 20px 25px -5px #000000, 0 8px 10px -6px #000000;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
