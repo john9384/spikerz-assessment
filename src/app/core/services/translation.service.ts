@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 export interface TranslationData {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 @Injectable({
@@ -31,8 +31,7 @@ export class TranslationService {
         this.translationsLoaded.next(true);
       }),
       map(() => true),
-      catchError((error) => {
-        console.error(`Failed to load translations for ${lang}:`, error);
+      catchError(() => {
         // Fallback to English if loading fails
         if (lang !== 'en') {
           return this.loadTranslations('en');
@@ -45,23 +44,21 @@ export class TranslationService {
   /**
    * Get translation by key
    */
-  translate(key: string, params?: { [key: string]: any }): string {
+  translate(key: string, params?: Record<string, string | number>): string {
     const keys = key.split('.');
-    let value: any = this.translations;
+    let value: unknown = this.translations;
 
     // Navigate through nested keys
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
-        console.warn(`Translation key not found: ${key}`);
         return key; // Return key if translation not found
       }
     }
 
     // If value is not a string, return the key
     if (typeof value !== 'string') {
-      console.warn(`Translation value is not a string for key: ${key}`);
       return key;
     }
 
@@ -76,9 +73,12 @@ export class TranslationService {
   /**
    * Interpolate parameters in translation string
    */
-  private interpolate(text: string, params: { [key: string]: any }): string {
+  private interpolate(
+    text: string,
+    params: Record<string, string | number>
+  ): string {
     return text.replace(/\{\{(\w+)\}\}/g, (match, key) => {
-      return params[key] !== undefined ? params[key] : match;
+      return params[key] !== undefined ? String(params[key]) : match;
     });
   }
 

@@ -99,6 +99,7 @@ export type TableColumn<T> = {
   sortable?: boolean;
   filterable?: boolean;
   width?: string;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   render?: (value: T[keyof T], row: T) => string;
 };
 
@@ -136,3 +137,4 @@ export type TResponse = ApiResponse<TData>;
 export type TTableData = Record<string, unknown>;
 export type TFormData = Record<string, unknown>;
 export type TFilterData = Record<string, unknown>;
+export type Event = unknown;
