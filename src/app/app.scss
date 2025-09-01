@@ -1,24 +1,2 @@
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app-header {
-  background-color: var(--primary-600);
-  color: var(--white);
-  padding: 1rem 2rem;
-  box-shadow: var(--shadow-md);
-
-  h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+// App-level styles are now handled by the layout components
+// This file can be used for global app-specific styles if needed
