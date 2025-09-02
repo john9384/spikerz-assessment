@@ -19,25 +19,25 @@ export class SidebarComponent {
     {
       label: 'navigation.dashboard',
       route: '/dashboard',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'dashboard',
       active: true,
     },
     {
       label: 'navigation.remediation',
       route: '/remediation',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'security',
       active: false,
     },
     {
       label: 'navigation.vulnerabilities',
       route: '/vulnerabilities',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'bug_report',
       active: false,
     },
     {
       label: 'navigation.risk',
       route: '/risk',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'warning',
       active: false,
     },
   ];
@@ -46,13 +46,13 @@ export class SidebarComponent {
     {
       label: 'navigation.profile',
       route: '/profile',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'person',
       active: false,
     },
     {
       label: 'navigation.notifications',
       route: '/notifications',
-      icon: 'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773456/BankLogos/Property_1_rubies-mfb_w04bh0.png',
+      icon: 'notifications',
       active: false,
     },
   ];

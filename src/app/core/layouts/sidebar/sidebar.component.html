@@ -1,10 +1,16 @@
 <aside class="sidebar">
-  <span> </span>
+  <div class="sidebar-toggle">
+    @if (isCollapsed) {
+    <span class="material-icons">keyboard_arrow_right</span>
+    } @else {
+    <span class="material-icons">keyboard_arrow_left</span>
+    }
+  </div>
   <div class="navigation-section">
     <ul class="navigation-section__list">
       @for (item of navigationItems; track item) {
       <li class="navigation-section__item">
-        <img [src]="item.icon" alt="icon" />
+        <span class="material-icons">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
@@ -12,7 +18,7 @@
     <ul class="navigation-section__list">
       @for (item of secondaryNavigationItems; track item) {
       <li class="navigation-section__item">
-        <img [src]="item.icon" alt="icon" />
+        <span class="material-icons">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
@@ -21,14 +27,15 @@
 
   <div class="user-section">
     <div class="user-info">
-      <span class="user-avatar"
-        ><img [src]="userProfile.avatar" alt="avatar"
-      /></span>
-      <div class="user-info-details">
+      <span class="user-info__avatar"
+        ><span class="material-icons">person</span></span
+      >
+      <div class="user-info__details">
         <span>{{ userProfile.name | translate }}</span>
         <span>{{ userProfile.email | translate }}</span>
       </div>
     </div>
-    <span><img src="" alt="log" /></span>
+
+    <span class="material-icons user-section__logout">logout</span>
   </div>
 </aside>
