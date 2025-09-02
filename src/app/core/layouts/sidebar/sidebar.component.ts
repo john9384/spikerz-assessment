@@ -12,11 +12,8 @@ import { NavigationItem } from '../../types/app.types';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  isCollapsed = false;
-
-  onToggleSidebar(): void {
-    this.isCollapsed = !this.isCollapsed;
-  }
+  @Input() isCollapsed = false;
+  @Output() toggleSidebar = new EventEmitter<void>();
 
   navigationItems: NavigationItem[] = [
     {
@@ -66,6 +63,10 @@ export class SidebarComponent {
     avatar:
       'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773455/BankLogos/Property_1_polaris-bank_v8hwoe.png',
   };
+
+  onToggleSidebar(): void {
+    this.toggleSidebar.emit();
+  }
 
   getIconClass(icon: string | undefined): string {
     if (!icon) return 'default-icon';

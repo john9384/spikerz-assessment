@@ -11,4 +11,28 @@
     flex-direction: column;
     background-color: var(--background-secondary);
   }
+
+  .mobile-topbar {
+    display: none;
+    .sidebar-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: var(--primary-800);
+      cursor: pointer;
+      .material-icons {
+        color: var(--white);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mobile-topbar {
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+  }
 }

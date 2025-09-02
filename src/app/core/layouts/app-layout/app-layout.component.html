@@ -1,6 +1,14 @@
 <div class="app-layout">
-  <app-sidebar />
+  <app-sidebar
+    [isCollapsed]="isSidebarCollapsed"
+    (toggleSidebar)="toggleSidebar()"
+  />
   <main class="main-content">
+    <nav class="mobile-topbar" (click)="toggleSidebar()">
+      <div class="sidebar-toggle">
+        <span class="material-icons">menu</span>
+      </div>
+    </nav>
     <router-outlet />
   </main>
 </div>

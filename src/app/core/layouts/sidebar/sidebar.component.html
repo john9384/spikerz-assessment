@@ -6,6 +6,9 @@
     <span class="material-icons">keyboard_arrow_left</span>
     }
   </div>
+  <div class="mobile-close-icon" (click)="onToggleSidebar()">
+    <span class="material-icons">close</span>
+  </div>
   <div class="navigation-section">
     <ul class="navigation-section__list">
       @for (item of navigationItems; track item) {
