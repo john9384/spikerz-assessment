@@ -10,10 +10,4 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss'],
 })
-export class AppLayoutComponent {
-  isSidebarCollapsed = false;
-
-  toggleSidebar(): void {
-    this.isSidebarCollapsed = !this.isSidebarCollapsed;
-  }
-}
+export class AppLayoutComponent {}
