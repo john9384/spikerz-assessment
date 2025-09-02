@@ -1,0 +1,36 @@
+<div class="central-panel">
+  <div class="paragraph">
+    <h2 class="paragraph__title">
+      {{ "dashboard.central_panel.paragraph_one.title" | translate }}
+    </h2>
+    <p class="paragraph__content">
+      {{ "dashboard.central_panel.paragraph_one.content" | translate }}
+    </p>
+  </div>
+  <div class="paragraph">
+    <h2 class="paragraph__title">
+      {{ "dashboard.central_panel.paragraph_two.title" | translate }}
+    </h2>
+    <p class="paragraph__content">
+      {{ "dashboard.central_panel.paragraph_two.content" | translate }}
+    </p>
+  </div>
+  <div class="details">
+    @for (detail of details; track detail.label) {
+    <div class="details-row">
+      <span class="details-label">{{ detail.label }}</span>
+      <span class="details-value">
+        @if(detail.hasCheck) {
+        <span class="material-icons">check</span>
+        }
+        {{ detail.value }}
+      </span>
+    </div>
+    } @empty {
+    <div class="details-row">
+      <span class="details-label">Lorem Ipsum Dolor</span>
+      <span class="details-value">Lorem Ipsum Dolor</span>
+    </div>
+    }
+  </div>
+</div>

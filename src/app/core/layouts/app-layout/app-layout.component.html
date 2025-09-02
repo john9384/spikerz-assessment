@@ -2,13 +2,13 @@
   <app-sidebar
     [isCollapsed]="isSidebarCollapsed"
     (toggleSidebar)="toggleSidebar()"
-  />
+  ></app-sidebar>
   <main class="main-content">
-    <nav class="mobile-topbar" (click)="toggleSidebar()">
-      <div class="sidebar-toggle">
+    <nav class="mobile-topbar">
+      <div class="sidebar-toggle" (click)="toggleSidebar()">
         <span class="material-icons">menu</span>
       </div>
     </nav>
-    <router-outlet />
+    <router-outlet></router-outlet>
   </main>
 </div>

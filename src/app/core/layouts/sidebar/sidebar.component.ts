@@ -1,4 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
@@ -11,7 +18,7 @@ import { NavigationItem } from '../../types/app.types';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit, OnDestroy {
   @Input() isCollapsed = false;
   @Output() toggleSidebar = new EventEmitter<void>();
 
@@ -64,8 +71,20 @@ export class SidebarComponent {
       'https://res.cloudinary.com/ddlhom1zz/image/upload/v1716773455/BankLogos/Property_1_polaris-bank_v8hwoe.png',
   };
 
+  ngOnInit(): void {
+    // Initialize component safely
+  }
+
+  ngOnDestroy(): void {
+    // Clean up any subscriptions or resources
+  }
+
   onToggleSidebar(): void {
-    this.toggleSidebar.emit();
+    try {
+      this.toggleSidebar.emit();
+    } catch (error) {
+      console.error('Error emitting sidebar toggle:', error);
+    }
   }
 
   getIconClass(icon: string | undefined): string {
