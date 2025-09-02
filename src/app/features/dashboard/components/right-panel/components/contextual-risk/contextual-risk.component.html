@@ -1,48 +1,50 @@
 <div class="contextual-risk">
-  <div class="dashboard">
-    <h1 class="title">Lorem Ipsum Dolor Sit</h1>
+  <h1 class="title">Lorem Ipsum Dolor Sit</h1>
 
-    <div class="content">
-      <div class="table-section">
-        <div class="table-header">
-          <div>Asset</div>
-          <div>Contextual Risk</div>
-        </div>
-
-        <div class="asset-list">
-          <div class="asset-item">
-            <div class="asset-info">
-              <div class="asset-icon"></div>
-              <div class="asset-details">
-                <h3>Loremipsumdolorsit</h3>
-                <p>192.168.1.1</p>
-              </div>
-            </div>
-            <div class="risk-badge risk-critical">Critical</div>
-          </div>
-
-          <div class="asset-item">
-            <div class="asset-info">
-              <div class="asset-icon"></div>
-              <div class="asset-details">
-                <h3>Loremipsumdolorsit002</h3>
-                <p>192.168.1.2</p>
-              </div>
-            </div>
-            <div class="risk-badge risk-critical">Critical</div>
-          </div>
-        </div>
-
-        <div class="pagination">
-          <div class="pagination-arrow disabled">‹</div>
-          <span>Showing 1-2 of 2</span>
-          <div class="pagination-arrow disabled">›</div>
-        </div>
+  <div class="container">
+    <div class="risk-table">
+      <div class="table-header risk-table__header risk-table__row">
+        <span>Asset</span>
+        <span>Contextual Risk</span>
       </div>
 
-      <div class="risk-summary">
-        <h2>Contextual Risk</h2>
+      <div class="risk-table__row">
+        <div class="asset-info">
+          <div class="asset-icon">
+            <span class="material-icons">dns_outlined</span>
+          </div>
+          <div class="asset-details">
+            <h3>Loremipsumdolorsit</h3>
+            <p>192.168.1.1</p>
+          </div>
+        </div>
+        <div class="risk-badge risk-critical">Critical</div>
+      </div>
 
+      <div class="risk-table__row">
+        <div class="asset-info">
+          <div class="asset-icon">
+            <span class="material-icons">dns_outlined</span>
+          </div>
+          <div class="asset-details">
+            <h3>Loremipsumdolorsit002</h3>
+            <p>192.168.1.2</p>
+          </div>
+        </div>
+        <div class="risk-badge risk-critical">Critical</div>
+      </div>
+
+      <div class="risk-table__footer">
+        <div class="pagination-arrow disabled">‹</div>
+        <span>Showing 1-2 of 2</span>
+        <div class="pagination-arrow disabled">›</div>
+      </div>
+    </div>
+
+    <div class="risk-summary">
+      <h2>Contextual Risk</h2>
+
+      <div class="container">
         <div class="risk-stats">
           <div class="risk-stat">
             <div class="risk-dot critical"></div>
