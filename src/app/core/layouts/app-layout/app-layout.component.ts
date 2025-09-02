@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -10,10 +10,22 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss'],
 })
-export class AppLayoutComponent {
+export class AppLayoutComponent implements OnInit, OnDestroy {
   isSidebarCollapsed = false;
 
+  ngOnInit(): void {
+    // Initialize component safely
+  }
+
+  ngOnDestroy(): void {
+    // Clean up any subscriptions or resources
+  }
+
   toggleSidebar(): void {
-    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    try {
+      this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    } catch (error) {
+      console.error('Error toggling sidebar:', error);
+    }
   }
 }

@@ -1,22 +1,27 @@
 .dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
   padding: 1.5rem;
+  width: 100%;
   height: 100%;
-  overflow-y: auto; // Allow content to scroll if needed
+  overflow: auto;
 
-  .dashboard-header {
-    margin-bottom: 3rem;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 12px;
+    padding: 1rem;
+  }
 
-    h1 {
-      margin: 0 0 0.5rem 0;
-      color: var(--text-primary);
-      font-size: 2.25rem;
-      font-weight: 700;
-    }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    padding: 1rem;
+  }
 
-    p {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: 1.125rem;
-    }
+  @media (max-width: 480px) {
+    gap: 12px;
+    padding: 0.75rem;
   }
 }
