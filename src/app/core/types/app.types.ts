@@ -99,6 +99,7 @@ export type TableColumn<T> = {
   sortable?: boolean;
   filterable?: boolean;
   width?: string;
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   render?: (value: T[keyof T], row: T) => string;
 };
@@ -118,6 +119,7 @@ export type NavigationItem = {
   icon?: string;
   children?: NavigationItem[];
   permissions?: string[];
+  active?: boolean;
 };
 
 // Notification types

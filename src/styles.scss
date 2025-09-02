@@ -1,1 +1,39 @@
-@use 'assets/styles/global.scss';
+@use "assets/styles/global.scss";
+
+// Global layout fixes
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; // Prevent body scroll
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-secondary);
+}
+
+// Ensure root element takes full height
+#root {
+  height: 100%;
+}
+
+// Remove default margins from common elements
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+// Ensure proper box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
