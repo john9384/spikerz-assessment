@@ -1,4 +1,3 @@
-// Button variants and sizes
 export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
@@ -12,7 +11,6 @@ export const BUTTON_SIZES = {
   LARGE: 'lg',
 } as const;
 
-// HTTP Status Codes
 export const HTTP_STATUS = {
   OK: 200,
   CREATED: 201,
@@ -25,7 +23,6 @@ export const HTTP_STATUS = {
   SERVICE_UNAVAILABLE: 503,
 } as const;
 
-// Validation constants
 export const VALIDATION = {
   MIN_PASSWORD_LENGTH: 8,
   MAX_PASSWORD_LENGTH: 128,
@@ -34,14 +31,12 @@ export const VALIDATION = {
   MAX_EMAIL_LENGTH: 254,
 } as const;
 
-// Pagination constants
 export const PAGINATION = {
   DEFAULT_PAGE_SIZE: 10,
   MAX_PAGE_SIZE: 100,
   DEFAULT_PAGE: 1,
 } as const;
 
-// UI constants
 export const UI = {
   ANIMATION_DURATION: 200,
   TRANSITION_DURATION: 300,
@@ -53,7 +48,6 @@ export const UI = {
   },
 } as const;
 
-// Risk levels
 export const RISK_LEVELS = {
   LOW: 'low',
   MEDIUM: 'medium',
@@ -61,7 +55,6 @@ export const RISK_LEVELS = {
   CRITICAL: 'critical',
 } as const;
 
-// Vulnerability statuses
 export const VULNERABILITY_STATUS = {
   OPEN: 'open',
   IN_PROGRESS: 'in_progress',
@@ -69,7 +62,6 @@ export const VULNERABILITY_STATUS = {
   CLOSED: 'closed',
 } as const;
 
-// Remediation statuses
 export const REMEDIATION_STATUS = {
   PENDING: 'pending',
   IN_PROGRESS: 'in_progress',
@@ -77,7 +69,6 @@ export const REMEDIATION_STATUS = {
   CANCELLED: 'cancelled',
 } as const;
 
-// Severity levels
 export const SEVERITY_LEVELS = {
   LOW: 'low',
   MEDIUM: 'medium',
@@ -85,7 +76,6 @@ export const SEVERITY_LEVELS = {
   CRITICAL: 'critical',
 } as const;
 
-// Types for the constants
 export type ButtonVariant =
   (typeof BUTTON_VARIANTS)[keyof typeof BUTTON_VARIANTS];
 export type ButtonSize = (typeof BUTTON_SIZES)[keyof typeof BUTTON_SIZES];

@@ -15,8 +15,64 @@ export class TranslationService {
   private translations: TranslationData = {};
   private translationsLoaded = new BehaviorSubject<boolean>(false);
 
+  // Fallback translations in case the JSON file fails to load
+  private fallbackTranslations: TranslationData = {
+    app: {
+      title: 'Spikerz Security Platform',
+      welcome: 'Welcome to Spikerz Security Dashboard',
+    },
+    dashboard: {
+      title: 'Dashboard',
+      security_score: 'Security Score',
+      vulnerabilities: 'Vulnerabilities',
+      remediations: 'Remediations',
+      risk_level: 'Risk Level',
+      status: {
+        good: 'Good',
+        medium_risk: 'Medium Risk',
+        in_progress: 'In Progress',
+        monitor_closely: 'Monitor Closely',
+      },
+    },
+    navigation: {
+      dashboard: 'Dashboard',
+      remediation: 'Remediation',
+      vulnerabilities: 'Vulnerabilities',
+      risk: 'Risk',
+      settings: 'Settings',
+      profile: 'Profile',
+      logout: 'Logout',
+      notifications: 'Notifications',
+    },
+    remediation: {
+      title: 'Remediation',
+      subtitle: 'Security remediation techniques and strategies',
+    },
+    vulnerabilities: {
+      title: 'Vulnerabilities',
+      subtitle: 'Security vulnerabilities and their details',
+    },
+    risk: {
+      title: 'Risk Assessment',
+      subtitle: 'Security risk analysis and management',
+    },
+    common: {
+      language: 'Language',
+      loading: 'Loading...',
+      error: 'Error',
+      success: 'Success',
+      warning: 'Warning',
+      info: 'Information',
+    },
+  };
+
   constructor(private http: HttpClient) {
-    this.loadTranslations(this.currentLanguage);
+    // Initialize with fallback translations
+    this.translations = this.fallbackTranslations;
+    this.translationsLoaded.next(true);
+
+    // Try to load from JSON file
+    this.loadTranslations(this.currentLanguage).subscribe();
   }
 
   /**
@@ -36,6 +92,9 @@ export class TranslationService {
         if (lang !== 'en') {
           return this.loadTranslations('en');
         }
+        // If English also fails, use fallback translations
+        this.translations = this.fallbackTranslations;
+        this.translationsLoaded.next(true);
         return of(false);
       })
     );
@@ -53,7 +112,12 @@ export class TranslationService {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
-        return key; // Return key if translation not found
+        // Try fallback translations if main translations don't have the key
+        value = this.getFallbackValue(keys);
+        if (value === undefined) {
+          return key; // Return key if translation not found anywhere
+        }
+        break;
       }
     }
 
@@ -65,6 +129,23 @@ export class TranslationService {
     // Replace parameters in the translation
     if (params) {
       return this.interpolate(value, params);
+    }
+
+    return value;
+  }
+
+  /**
+   * Get fallback value for a key
+   */
+  private getFallbackValue(keys: string[]): unknown {
+    let value: unknown = this.fallbackTranslations;
+
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return undefined;
+      }
     }
 
     return value;

@@ -108,7 +108,8 @@
     "risk": "Risk",
     "settings": "Settings",
     "profile": "Profile",
-    "logout": "Logout"
+    "logout": "Logout",
+    "notifications": "Notifications"
   },
   "auth": {
     "login": "Login",

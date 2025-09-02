@@ -1,5 +1,7 @@
 .dashboard {
   padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto; // Allow content to scroll if needed
 
   .dashboard-header {
     margin-bottom: 3rem;
