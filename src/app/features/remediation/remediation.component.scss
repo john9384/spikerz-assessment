@@ -91,12 +91,52 @@
 
           .card-header {
             margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
 
             h3 {
               margin: 0;
               color: var(--text-primary);
               font-size: var(--font-size-base);
               font-weight: var(--font-weight-semibold);
+              flex: 1;
+            }
+
+            .asset-meta {
+              display: flex;
+              flex-direction: column;
+              gap: 0.25rem;
+              align-items: flex-end;
+
+              .risk-level {
+                padding: 0.25rem 0.5rem;
+                border-radius: 12px;
+                font-size: var(--font-size-xs);
+                font-weight: var(--font-weight-medium);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+
+                &.risk-critical {
+                  background: var(--error-100);
+                  color: var(--error-700);
+                }
+
+                &.risk-high {
+                  background: var(--warning-100);
+                  color: var(--warning-700);
+                }
+
+                &.risk-medium {
+                  background: var(--warning-50);
+                  color: var(--warning-600);
+                }
+
+                &.risk-low {
+                  background: var(--success-100);
+                  color: var(--success-700);
+                }
+              }
             }
           }
 
