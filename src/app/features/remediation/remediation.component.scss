@@ -107,35 +107,6 @@
               gap: 0.75rem;
               margin-bottom: 0.75rem;
 
-              .asset-icon {
-                width: 32px;
-                height: 32px;
-                background: var(--primary-100);
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .material-icons-outlined {
-                  color: var(--primary-600);
-                  font-size: 18px;
-                  font-family: "Material Icons Outlined";
-                  font-weight: normal;
-                  font-style: normal;
-                  line-height: 1;
-                  letter-spacing: normal;
-                  text-transform: none;
-                  display: inline-block;
-                  white-space: nowrap;
-                  word-wrap: normal;
-                  direction: ltr;
-                  -webkit-font-smoothing: antialiased;
-                  text-rendering: optimizeLegibility;
-                  -moz-osx-font-smoothing: grayscale;
-                  font-feature-settings: "liga";
-                }
-              }
-
               .asset-type {
                 color: var(--text-secondary);
                 font-size: var(--font-size-sm);

@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7rem;
+    padding: 0.8rem;
     border-bottom: 1px solid #dee2e6;
   }
 
@@ -45,35 +45,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-  }
-  .asset-icon {
-    width: 40px;
-    height: 40px;
-    background: #d7eaff;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-
-    .material-icons-outlined {
-      color: #6c757d;
-      font-size: 20px;
-      font-family: "Material Icons Outlined";
-      font-weight: normal;
-      font-style: normal;
-      line-height: 1;
-      letter-spacing: normal;
-      text-transform: none;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: normal;
-      direction: ltr;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: "liga";
-    }
   }
 
   .asset-details h3 {

@@ -114,11 +114,10 @@
       }
 
       &.active {
-        background-color: var(--primary-100);
-        border-left: 3px solid var(--primary-500);
+        background-color: var(--background-hover);
 
         .material-icons {
-          color: var(--primary-600);
+          color: black;
         }
       }
     }
