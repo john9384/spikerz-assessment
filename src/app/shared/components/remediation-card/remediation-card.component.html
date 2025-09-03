@@ -1,0 +1,21 @@
+<div class="asset-card">
+  <div class="asset-card-header">
+    <h3>{{ remediation.title }}</h3>
+  </div>
+  <div class="asset-card-details">
+    <div class="asset-card-details-info">
+      <app-server-icon />
+      <div class="asset-card-details-info-texts">
+        <span>Server</span>
+        <span class="text-small">Server</span>
+      </div>
+    </div>
+    <span class="divider">&nbsp;</span>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  @if (remediation.summary) {
+  <p class="asset-card-summary">
+    {{ remediation.summary }}
+  </p>
+  }
+</div>

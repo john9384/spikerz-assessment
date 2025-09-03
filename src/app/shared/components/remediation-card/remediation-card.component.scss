@@ -1,0 +1,57 @@
+.asset-card {
+  box-shadow: var(--shadow-sm);
+  background-color: white;
+  padding: 1rem;
+  height: 124.91999816894531;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #404a60;
+  font-size: 13px;
+
+  &-header {
+    font-family: Public Sans;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 1%;
+    text-transform: capitalize;
+  }
+
+  &-details {
+    height: 70px;
+    background-color: #fafafa;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    gap: 8px;
+
+    .divider {
+      display: flex;
+      width: 1px;
+      height: 100%;
+      background-color: var(--grey-500);
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-right: 2rem;
+      &-texts {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .text-small {
+          font-size: 11px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

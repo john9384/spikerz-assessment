@@ -1,9 +1,4 @@
 <div class="remediation-page">
-  <header class="page-header">
-    <h1>{{ "remediation.title" | translate }}</h1>
-    <p>{{ "remediation.subtitle" | translate }}</p>
-  </header>
-
   <div class="remediation-content">
     <div class="remediation-techniques">
       @for (technique of remediationTechniques; track technique.id) {
@@ -14,36 +9,10 @@
         <div class="technique-header">
           <span class="technique-icon">◆</span>
           <h2>{{ technique.name }}</h2>
-          <div class="technique-meta">
-            <span class="priority">Priority: {{ technique.priority }}</span>
-            <span class="time">Est. Time: {{ technique.estimatedTime }}</span>
-          </div>
         </div>
-
-        <p class="technique-description">{{ technique.description }}</p>
-
         <div class="asset-cards">
           @for (asset of technique.assets; track asset.id) {
-          <div class="asset-card">
-            <div class="card-header">
-              <h3>{{ asset.title }}</h3>
-              <div class="asset-meta">
-                <span class="risk-level" [class]="'risk-' + asset.riskLevel">{{
-                  asset.riskLevel
-                }}</span>
-              </div>
-            </div>
-            <div class="card-content">
-              <div class="asset-info">
-                <app-server-icon></app-server-icon>
-                <span class="asset-type">{{ asset.type }}</span>
-              </div>
-              <p class="asset-description">{{ asset.description }}</p>
-              @if (asset.details) {
-              <p class="asset-details">{{ asset.details }}</p>
-              }
-            </div>
-          </div>
+          <app-remediation-card [remediation]="asset" />
           }
         </div>
       </div>
