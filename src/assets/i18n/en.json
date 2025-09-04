@@ -54,7 +54,7 @@
       "access_control": "Access Control"
     },
     "contextual_risk": {
-      "title": "Contextual Risk Analysis",
+      "title": "Contextual Risk",
       "asset_name_1": "Web Application Server",
       "asset_name_2": "Database Server",
       "asset_ip_1": "192.168.1.10",
