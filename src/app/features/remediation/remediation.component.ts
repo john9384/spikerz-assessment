@@ -1,19 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../shared/pipes/translate.pipe';
-import { ServerIconComponent } from '../../shared/components/server-icon';
-import { RemediationCardComponent } from '../../shared/components/remediation-card/remediation-card.component';
+import { Component } from '@angular/core';
 import type { RemediationTechnique } from '../../core/types/app.types';
+import { RemediationCardComponent } from '../../shared/components/remediation-card/remediation-card.component';
 
 @Component({
   selector: 'app-remediation',
   standalone: true,
-  imports: [
-    CommonModule,
-    TranslatePipe,
-    ServerIconComponent,
-    RemediationCardComponent,
-  ],
+  imports: [CommonModule, RemediationCardComponent],
   templateUrl: './remediation.component.html',
   styleUrls: ['./remediation.component.scss'],
 })

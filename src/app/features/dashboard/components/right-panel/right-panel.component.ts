@@ -1,18 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
-import { ContextualRiskComponent } from './components/contextual-risk';
+import { Component } from '@angular/core';
 import { AssetFlowComponent } from './components/asset-flow';
+import { ContextualRiskComponent } from './components/contextual-risk';
 
 @Component({
   selector: 'right-panel',
   standalone: true,
-  imports: [
-    CommonModule,
-    TranslatePipe,
-    ContextualRiskComponent,
-    AssetFlowComponent,
-  ],
+  imports: [CommonModule, ContextualRiskComponent, AssetFlowComponent],
   templateUrl: './right-panel.component.html',
   styleUrls: ['./right-panel.component.scss'],
 })
