@@ -14,33 +14,33 @@ import { RemediationCardComponent } from '../../../../shared/components/remediat
 export class CentralPanelComponent {
   details = [
     {
-      label: 'Lorem Ipsum Dolor',
-      value: '10/19/2017',
+      label: 'dashboard.system_details.last_scan',
+      value: '2024-01-15 14:30',
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Ut',
+      label: 'dashboard.system_details.firewall_status',
+      value: 'Active',
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Eros',
+      label: 'dashboard.system_details.antivirus_status',
+      value: 'Updated',
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Yes',
+      label: 'dashboard.system_details.backup_status',
+      value: 'Completed',
       hasCheck: true,
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Sit',
+      label: 'dashboard.system_details.ssl_certificate',
+      value: 'Valid',
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Lorem Ipsum Dolor',
+      label: 'dashboard.system_details.user_management',
+      value: 'Configured',
     },
     {
-      label: 'Lorem Ipsum Dolor',
-      value: 'Lorem Ipsum Dolor',
+      label: 'dashboard.system_details.access_control',
+      value: 'Enabled',
     },
   ];
 

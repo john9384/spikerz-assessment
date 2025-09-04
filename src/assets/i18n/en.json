@@ -43,25 +43,53 @@
       "medium_risk": "Medium Risk",
       "in_progress": "In Progress",
       "monitor_closely": "Monitor Closely"
+    },
+    "system_details": {
+      "last_scan": "Last Security Scan",
+      "firewall_status": "Firewall Status",
+      "antivirus_status": "Antivirus Status",
+      "backup_status": "Backup Status",
+      "ssl_certificate": "SSL Certificate",
+      "user_management": "User Management",
+      "access_control": "Access Control"
+    },
+    "contextual_risk": {
+      "title": "Contextual Risk Analysis",
+      "asset_name_1": "Web Application Server",
+      "asset_name_2": "Database Server",
+      "asset_ip_1": "192.168.1.10",
+      "asset_ip_2": "192.168.1.20"
+    },
+    "asset_flow": {
+      "title": "Network Asset Flow",
+      "web_server": "Web Server",
+      "load_balancer": "Load Balancer",
+      "database": "Database",
+      "firewall": "Firewall",
+      "api_gateway": "API Gateway",
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
     }
   },
   "remediation": {
     "title": "Remediation",
     "subtitle": "Security remediation techniques and strategies",
     "techniques": {
-      "technique_a": "remediation technique A",
-      "technique_b": "remediation technique B",
-      "technique_c": "remediation technique C"
+      "technique_a": "Network Security Hardening",
+      "technique_b": "Application Security Review",
+      "technique_c": "Data Protection Implementation"
     },
     "assets": {
       "server": "Server",
-      "lorem_t": "Lorem T",
-      "lorem_s": "Lorem S",
-      "lorem_p": "Lorem P",
-      "description": "Lorem Ipsum Dolor Sit Amet Consectetur.",
-      "details_a": "Lorem Ipsum Dolor Sit Amet Consectetur. In Laoreet Elementum Luctus Odio, Id Enim Urna.",
-      "details_b": "Lorem Ipsum Dolor Sit Amet Consectetur. Quis Viverra Etiam Pellentesque Lectus Semper In Massa Purus. Auctor Aenean Aenean Senectus Massa Dignissim Vehicula Mi Erat Purus. Praesent Scelerisque Aliquet Metus Sagittis Dictum Sed Sed. Sed Venenatis Sed Urna Quam.",
-      "details_c": "Lorem Ipsum Dolor Sit Amet Consectetur. Nunc Vitae Tortor Convallis Vitae Arcu. Magna."
+      "firewall": "Firewall",
+      "database": "Database",
+      "application": "Application",
+      "description": "Implement comprehensive security measures to protect critical infrastructure.",
+      "details_a": "Configure network security policies, update firewall rules, and implement intrusion detection systems to prevent unauthorized access.",
+      "details_b": "Perform comprehensive security code review, implement secure coding practices, update vulnerable dependencies, and establish secure development lifecycle processes.",
+      "details_c": "Implement data encryption at rest and in transit, establish proper access controls, and create data backup and recovery procedures."
     }
   },
   "vulnerabilities": {
@@ -126,7 +154,8 @@
     "export": "Export",
     "import": "Import",
     "download": "Download",
-    "upload": "Upload"
+    "upload": "Upload",
+    "asset": "Asset"
   },
   "navigation": {
     "dashboard": "Dashboard",

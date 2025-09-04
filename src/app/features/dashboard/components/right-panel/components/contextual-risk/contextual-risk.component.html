@@ -1,33 +1,37 @@
 <div class="contextual-risk">
-  <h1 class="title">Lorem Ipsum Dolor Sit</h1>
+  <h1 class="title">{{ "dashboard.contextual_risk.title" | translate }}</h1>
 
   <div class="container">
     <div class="risk-table">
       <div class="table-header risk-table__header risk-table__row">
-        <span>Asset</span>
-        <span>Contextual Risk</span>
+        <span>{{ "common.asset" | translate }}</span>
+        <span>{{ "dashboard.contextual_risk.title" | translate }}</span>
       </div>
 
       <div class="risk-table__row">
         <div class="asset-info">
           <app-server-icon></app-server-icon>
           <div class="asset-details">
-            <h3>Loremipsumdolorsit</h3>
-            <p>192.168.1.1</p>
+            <h3>{{ "dashboard.contextual_risk.asset_name_1" | translate }}</h3>
+            <p>{{ "dashboard.contextual_risk.asset_ip_1" | translate }}</p>
           </div>
         </div>
-        <div class="risk-badge risk-critical">Critical</div>
+        <div class="risk-badge risk-critical">
+          {{ "dashboard.asset_flow.critical" | translate }}
+        </div>
       </div>
 
       <div class="risk-table__row">
         <div class="asset-info">
           <app-server-icon></app-server-icon>
           <div class="asset-details">
-            <h3>Loremipsumdolorsit002</h3>
-            <p>192.168.1.2</p>
+            <h3>{{ "dashboard.contextual_risk.asset_name_2" | translate }}</h3>
+            <p>{{ "dashboard.contextual_risk.asset_ip_2" | translate }}</p>
           </div>
         </div>
-        <div class="risk-badge risk-critical">Critical</div>
+        <div class="risk-badge risk-critical">
+          {{ "dashboard.asset_flow.critical" | translate }}
+        </div>
       </div>
 
       <div class="risk-table__footer">

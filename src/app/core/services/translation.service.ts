@@ -34,16 +34,17 @@ export class TranslationService {
       },
       assets: {
         server: 'Server',
-        lorem_t: 'Lorem T',
-        lorem_s: 'Lorem S',
-        lorem_p: 'Lorem P',
-        description: 'Lorem Ipsum Dolor Sit Amet Consectetur.',
+        firewall: 'Firewall',
+        database: 'Database',
+        application: 'Application',
+        description:
+          'Implement comprehensive security measures to protect critical infrastructure.',
         details_a:
-          'Lorem Ipsum Dolor Sit Amet Consectetur. In Laoreet Elementum Luctus Odio, Id Enim Urna.',
+          'Configure network security policies, update firewall rules, and implement intrusion detection systems to prevent unauthorized access.',
         details_b:
-          'Lorem Ipsum Dolor Sit Amet Consectetur. Quis Viverra Etiam Pellentesque Lectus Semper In Massa Purus. Auctor Aenean Aenean Senectus Massa Dignissim Vehicula Mi Erat Purus. Praesent Scelerisque Aliquet Metus Sagittis Dictum Sed Sed. Sed Venenatis Sed Urna Quam.',
+          'Perform comprehensive security code review, implement secure coding practices, update vulnerable dependencies, and establish secure development lifecycle processes.',
         details_c:
-          'Lorem Ipsum Dolor Sit Amet Consectetur. Nunc Vitae Tortor Convallis Vitae Arcu. Magna.',
+          'Implement data encryption at rest and in transit, establish proper access controls, and create data backup and recovery procedures.',
       },
     },
   };

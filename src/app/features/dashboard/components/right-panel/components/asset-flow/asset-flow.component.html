@@ -1,18 +1,31 @@
 <div class="asset-flow">
-  <h1 class="title">Lorem Lorem Lorem</h1>
+  <h1 class="title">{{ "dashboard.asset_flow.title" | translate }}</h1>
   <div class="container">
     <div class="network-canvas">
-      <span class="node node-1"><app-graph-node title="Lorem" /></span>
+      <span class="node node-1"
+        ><app-graph-node [title]="'dashboard.asset_flow.firewall' | translate"
+      /></span>
       <span class="edge edge-1">&nbsp;</span>
-      <span class="node node-2"><app-graph-node title="Lorem" /></span>
+      <span class="node node-2"
+        ><app-graph-node
+          [title]="'dashboard.asset_flow.load_balancer' | translate"
+      /></span>
       <span class="edge edge-2">&nbsp;</span>
-      <span class="node node-3"><app-graph-node title="Lorem" /></span>
+      <span class="node node-3"
+        ><app-graph-node
+          [title]="'dashboard.asset_flow.web_server' | translate"
+      /></span>
       <span class="edge edge-3">&nbsp;</span>
 
       <span class="edge edge-4">&nbsp;</span>
       <span class="edge edge-5">&nbsp;</span>
-      <span class="node node-4"><app-graph-node title="Lorem" /></span>
-      <span class="node node-5"><app-graph-node title="Lorem" /></span>
+      <span class="node node-4"
+        ><app-graph-node
+          [title]="'dashboard.asset_flow.api_gateway' | translate"
+      /></span>
+      <span class="node node-5"
+        ><app-graph-node [title]="'dashboard.asset_flow.database' | translate"
+      /></span>
 
       <span class="edge edge-6">&nbsp;</span>
       <span class="edge edge-7">&nbsp;</span>
@@ -23,19 +36,23 @@
         <div class="legend__icon red">
           <span class="material-icons red">verified_user</span>
         </div>
-        <span class="red">Lorem</span>
+        <span class="red">{{
+          "dashboard.asset_flow.critical" | translate
+        }}</span>
       </div>
       <div class="legend__item">
         <div class="legend__icon orange">
           <span class="material-icons orange">verified_user</span>
         </div>
-        <span class="orange">Lorem</span>
+        <span class="orange">{{
+          "dashboard.asset_flow.high" | translate
+        }}</span>
       </div>
       <div class="legend__item">
         <div class="legend__icon green">
           <span class="material-icons">verified_user</span>
         </div>
-        <span class="green">Lorem</span>
+        <span class="green">{{ "dashboard.asset_flow.low" | translate }}</span>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
   <div class="details">
     @for (detail of details; track detail.label) {
     <div class="details-row">
-      <span class="details-label">{{ detail.label }}</span>
+      <span class="details-label">{{ detail.label | translate }}</span>
       <span class="details-value">
         @if(detail.hasCheck) {
         <span class="material-icons">check</span>
@@ -29,8 +29,10 @@
     </div>
     } @empty {
     <div class="details-row">
-      <span class="details-label">Lorem Ipsum Dolor</span>
-      <span class="details-value">Lorem Ipsum Dolor</span>
+      <span class="details-label">{{
+        "dashboard.system_details.last_scan" | translate
+      }}</span>
+      <span class="details-value">{{ "common.loading" | translate }}</span>
     </div>
     }
   </div>
