@@ -15,39 +15,7 @@ export class TranslationService {
   private translations: TranslationData = {};
   private translationsLoaded = new BehaviorSubject<boolean>(false);
 
-  private fallbackTranslations: TranslationData = {
-    navigation: {
-      dashboard: 'Dashboard',
-      remediation: 'Remediation',
-      vulnerabilities: 'Vulnerabilities',
-      risk: 'Risk Assessment',
-      profile: 'Profile',
-      notifications: 'Notifications',
-    },
-    remediation: {
-      title: 'Remediation',
-      subtitle: 'Security remediation techniques and strategies',
-      techniques: {
-        technique_a: 'remediation technique A',
-        technique_b: 'remediation technique B',
-        technique_c: 'remediation technique C',
-      },
-      assets: {
-        server: 'Server',
-        firewall: 'Firewall',
-        database: 'Database',
-        application: 'Application',
-        description:
-          'Implement comprehensive security measures to protect critical infrastructure.',
-        details_a:
-          'Configure network security policies, update firewall rules, and implement intrusion detection systems to prevent unauthorized access.',
-        details_b:
-          'Perform comprehensive security code review, implement secure coding practices, update vulnerable dependencies, and establish secure development lifecycle processes.',
-        details_c:
-          'Implement data encryption at rest and in transit, establish proper access controls, and create data backup and recovery procedures.',
-      },
-    },
-  };
+  private fallbackTranslations: TranslationData = {};
 
   constructor(private http: HttpClient) {
     this.translations = this.fallbackTranslations;
