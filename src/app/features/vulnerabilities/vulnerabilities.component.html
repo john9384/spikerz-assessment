@@ -5,6 +5,224 @@
   </header>
 
   <div class="vulnerabilities-content">
-    <p>Vulnerabilities management will be implemented here.</p>
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Left Side - Vulnerabilities List -->
+      <div class="vulnerabilities-section">
+        <h2>Vulnerabilities drawer</h2>
+        <div class="vulnerabilities-list">
+          @for (vulnerability of vulnerabilities; track vulnerability.id) {
+          <div
+            class="vulnerability-item"
+            (click)="selectVulnerability(vulnerability)"
+          >
+            <div
+              class="vulnerability-pill"
+              [style.background-color]="
+                getSeverityColor(vulnerability.severity)
+              "
+            >
+              {{ vulnerability.identifier }}
+            </div>
+            <div class="vulnerability-info">
+              <span
+                class="severity-badge"
+                [class]="'severity-' + vulnerability.severity"
+              >
+                {{ vulnerability.severity }}
+              </span>
+              <p class="description">{{ vulnerability.description }}</p>
+              <span class="date">{{ vulnerability.discoveredDate }}</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- Right Side - Asset Preview Cards -->
+      <div class="assets-section">
+        <h2>Affected Assets</h2>
+        <div class="asset-cards">
+          @for (asset of assets; track asset.id) {
+          <div class="asset-card" (click)="selectVulnerabilityFromAsset(asset)">
+            <div class="card-header">
+              <h3>Frame {{ asset.frameId }}</h3>
+              <app-server-icon></app-server-icon>
+            </div>
+            <div class="card-content">
+              <h4>{{ asset.name }}</h4>
+              <p class="ip-address">{{ asset.ipAddress }}</p>
+              <div class="context-logs">
+                @for (log of asset.contextLogs; track log) {
+                <p class="log-entry">{{ log }}</p>
+                }
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Drawer - Vulnerability Details -->
+    <div class="vulnerability-drawer" [class.open]="showDrawer">
+      @if (selectedVulnerability) {
+      <div class="drawer-header">
+        <h2>
+          Vulnerabilities > {{ selectedVulnerability.cveId || "Custom Alert" }}
+        </h2>
+        <button class="close-btn" (click)="closeDrawer()">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+
+      <div class="drawer-content">
+        <!-- Left Panel -->
+        <div class="detail-left-panel">
+          <!-- Navigation -->
+          <div class="detail-navigation">
+            <ul class="nav-list">
+              <li class="nav-item active">
+                <span class="material-icons">security</span>
+                <span>Lorem</span>
+              </li>
+              <li class="nav-item">
+                <span class="material-icons">info</span>
+                <span>A Lorem</span>
+              </li>
+              <li class="nav-item">
+                <span class="material-icons">assessment</span>
+                <span>Lorem</span>
+              </li>
+              <li class="nav-item">
+                <span class="material-icons">hash</span>
+                <span>Lorem</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Description -->
+          <div class="detail-section">
+            <h3>Description</h3>
+            <p>{{ selectedVulnerability.description }}</p>
+          </div>
+
+          <!-- Extra Information -->
+          <div class="detail-section">
+            <h3>Extra</h3>
+            <p>{{ selectedVulnerability.extraInfo }}</p>
+          </div>
+
+          <!-- Metadata -->
+          <div class="detail-section">
+            <h3>Lorem Ipsum Dolor</h3>
+            <div class="metadata-table">
+              @for (entry of getMetadataEntries(selectedVulnerability.metadata);
+              track entry[0]) {
+              <div class="metadata-row">
+                <span class="metadata-key">{{ entry[0] }}</span>
+                <span class="metadata-value">{{ entry[1] }}</span>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="detail-right-panel">
+          <!-- Network Graph -->
+          <div class="detail-section">
+            <h3>Lorem Lorem Lorem</h3>
+            <div class="network-graph">
+              <div class="graph-container">
+                @for (node of selectedVulnerability.networkGraph; track node.id)
+                {
+                <div
+                  class="graph-node"
+                  [class]="'node-' + node.type.toLowerCase()"
+                >
+                  <span class="node-name">{{ node.name }}</span>
+                  @if (node.ipAddress) {
+                  <span class="node-ip">{{ node.ipAddress }}</span>
+                  }
+                </div>
+                }
+              </div>
+              <div class="graph-legend">
+                @for (i of [1,2,3]; track i) {
+                <span class="legend-item">
+                  <span class="legend-icon">●</span>
+                  Lorem
+                </span>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Contextual Risk Summary -->
+          <div class="detail-section">
+            <h3>Lorem Ipsum Dolor Sit</h3>
+            <div class="contextual-risk-table">
+              <div class="table-header">
+                <span>Asset</span>
+                <span>Contextual Risk</span>
+              </div>
+              @for (risk of selectedVulnerability.contextualRisks; track
+              risk.assetId) {
+              <div class="table-row">
+                <span class="asset-name">{{ risk.assetName }}</span>
+                <span
+                  class="risk-badge"
+                  [style.background-color]="getRiskLevelColor(risk.riskLevel)"
+                  [style.color]="getRiskLevelTextColor(risk.riskLevel)"
+                >
+                  {{ risk.riskLevel }}
+                </span>
+              </div>
+              }
+            </div>
+
+            <!-- Risk Summary -->
+            <div class="risk-summary">
+              <div class="summary-stats">
+                @for (risk of selectedVulnerability.contextualRisks; track
+                risk.assetId) {
+                <div class="risk-stat">
+                  <span
+                    class="risk-dot"
+                    [class]="'risk-' + risk.riskLevel"
+                  ></span>
+                  <span class="count">1</span>
+                  <span class="label">{{ risk.riskLevel }}</span>
+                </div>
+                }
+                <div class="risk-stat">
+                  <span class="risk-dot risk-high"></span>
+                  <span class="count">0</span>
+                  <span class="label">High</span>
+                </div>
+                <div class="risk-stat">
+                  <span class="risk-dot risk-medium"></span>
+                  <span class="count">0</span>
+                  <span class="label">Medium</span>
+                </div>
+                <div class="risk-stat">
+                  <span class="risk-dot risk-low"></span>
+                  <span class="count">0</span>
+                  <span class="label">Low</span>
+                </div>
+              </div>
+
+              <div class="risk-circle">
+                <div class="circle-number">
+                  {{ selectedVulnerability.contextualRisks.length }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
   </div>
 </div>

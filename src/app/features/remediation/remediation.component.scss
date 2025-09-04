@@ -41,9 +41,6 @@
     .technique-column {
       display: flex;
       flex-direction: column;
-      border: 2px dashed var(--primary-500);
-      border-radius: 12px;
-      padding: 1.5rem;
       background: var(--background-secondary);
       min-height: 500px;
 

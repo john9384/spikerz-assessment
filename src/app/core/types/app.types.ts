@@ -1,8 +1,4 @@
-import {
-  SeverityLevel,
-  VulnerabilityStatus,
-  RemediationStatus,
-} from '../constants/app.constants';
+import { SeverityLevel, VulnerabilityStatus } from '../constants/app.constants';
 
 // API Response types
 export type ApiResponse<T> = {
@@ -62,14 +58,7 @@ export type RiskAssessment = {
 
 export type Remediation = {
   id: string;
-  title: string;
-  description: string;
-  category: RemediationCategory;
-  priority: Priority;
-  status: RemediationStatus;
-  assignedTo?: string;
-  dueDate?: Date;
-  completedAt?: Date;
+  [key: string]: string;
 };
 
 export type RemediationCategory = 'prevention' | 'detection' | 'response';
@@ -140,3 +129,58 @@ export type TTableData = Record<string, unknown>;
 export type TFormData = Record<string, unknown>;
 export type TFilterData = Record<string, unknown>;
 export type Event = unknown;
+
+// Extended Vulnerability types for the vulnerabilities component
+export type DetailedVulnerability = {
+  id: string;
+  identifier: string;
+  cveId?: string;
+  description: string;
+  extraInfo: string;
+  severity: SeverityLevel;
+  discoveredDate: string;
+  metadata: Record<string, string>;
+  networkGraph: NetworkNode[];
+  contextualRisks: ContextualRisk[];
+};
+
+export type NetworkNode = {
+  id: string;
+  name: string;
+  type: 'server' | 'router' | 'switch' | 'endpoint';
+  ipAddress?: string;
+};
+
+export type ContextualRisk = {
+  assetId: string;
+  assetName: string;
+  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+};
+
+export type Asset = {
+  id: string;
+  frameId: string;
+  name: string;
+  ipAddress: string;
+  vulnerabilities: string[];
+  contextLogs: string[];
+};
+
+export interface RemediationAsset {
+  id: string;
+  title: string;
+  type: string;
+  description: string;
+  summary?: string;
+  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  status: 'pending' | 'in_progress' | 'completed';
+}
+
+export interface RemediationTechnique {
+  id: string;
+  name: string;
+  description: string;
+  assets: RemediationAsset[];
+  priority: number;
+  estimatedTime: string;
+}

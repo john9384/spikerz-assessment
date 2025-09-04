@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../../../../shared/pipes/translate.pipe';
-import { ServerIconComponent } from '../../../../../../shared/components/ui/server-icon';
+import { ServerIconComponent } from '../../../../../../shared/components/server-icon';
 
 @Component({
   selector: 'app-contextual-risk',
