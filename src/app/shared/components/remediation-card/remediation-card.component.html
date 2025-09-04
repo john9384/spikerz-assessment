@@ -1,21 +1,29 @@
-<div class="asset-card">
-  <div class="asset-card-header">
-    <h3>{{ remediation.title }}</h3>
-  </div>
+<article
+  class="asset-card"
+  [attr.aria-labelledby]="'asset-' + remediation.id + '-title'"
+>
+  <header class="asset-card-header">
+    <h3 id="asset-{{ remediation.id }}-title">{{ remediation.title }}</h3>
+  </header>
   <div class="asset-card-details">
     <div class="asset-card-details-info">
-      <app-server-icon />
+      <app-server-icon aria-hidden="true" />
       <div class="asset-card-details-info-texts">
-        <span>Server</span>
-        <span class="text-small">Server</span>
+        <span class="asset-type">{{ remediation.type }}</span>
+        <span class="text-small asset-subtype">{{
+          remediation.ipAddress
+        }}</span>
       </div>
     </div>
-    <span class="divider">&nbsp;</span>
-    <p>{{ "remediation.assets.description" | translate }}</p>
+    <span class="divider" aria-hidden="true">&nbsp;</span>
+    <p class="asset-description">
+      {{ "remediation.assets.description" | translate }}
+    </p>
   </div>
   @if (remediation.summary) {
-  <p class="asset-card-summary">
-    {{ remediation.summary }}
-  </p>
+  <div class="asset-card-summary">
+    <h4 class="sr-only">Summary</h4>
+    <p>{{ remediation.summary }}</p>
+  </div>
   }
-</div>
+</article>

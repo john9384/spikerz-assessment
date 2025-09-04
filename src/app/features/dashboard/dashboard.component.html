@@ -1,4 +1,16 @@
-<div class="dashboard">
-  <central-panel />
-  <right-panel />
+<div class="dashboard" role="main" aria-label="Security dashboard">
+  <section class="central-panel" aria-labelledby="central-panel-heading">
+    <h1 id="central-panel-heading" class="sr-only">Dashboard Overview</h1>
+    <central-panel />
+  </section>
+  <aside
+    class="right-panel"
+    role="complementary"
+    aria-labelledby="right-panel-heading"
+  >
+    <h2 id="right-panel-heading" class="sr-only">
+      Quick Actions and Risk Analysis
+    </h2>
+    <right-panel />
+  </aside>
 </div>

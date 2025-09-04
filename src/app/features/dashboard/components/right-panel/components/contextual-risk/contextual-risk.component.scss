@@ -69,7 +69,6 @@
     align-items: center;
     gap: 12px;
 
-    // Mobile: Smaller gap
     @include respond-below(sm) {
       gap: 8px;
     }
@@ -114,6 +113,8 @@
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.2s;
+    background-color: transparent;
+    border: none;
   }
 
   .pagination-arrow:hover {

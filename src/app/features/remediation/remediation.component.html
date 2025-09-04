@@ -1,22 +1,44 @@
-<div class="remediation-page">
+<main
+  class="remediation-page"
+  role="main"
+  aria-labelledby="remediation-heading"
+>
+  <header class="page-header">
+    <h1 id="remediation-heading">{{ "remediation.title" | translate }}</h1>
+    <p>{{ "remediation.subtitle" | translate }}</p>
+  </header>
   <div class="remediation-content">
-    <div class="remediation-techniques">
+    <div
+      class="remediation-techniques"
+      role="list"
+      aria-label="Remediation techniques"
+    >
       @for (technique of remediationTechniques; track technique.id) {
-      <div
+      <section
         class="technique-column"
         [class]="'technique-' + technique.id.split('-')[1]"
+        role="listitem"
+        [attr.aria-labelledby]="'technique-' + technique.id + '-heading'"
       >
-        <div class="technique-header">
-          <span class="technique-icon">◆</span>
-          <h2>{{ technique.name }}</h2>
-        </div>
-        <div class="asset-cards">
+        <header class="technique-header">
+          <span class="technique-icon" aria-hidden="true">◆</span>
+          <h2 id="technique-{{ technique.id }}-heading">
+            {{ technique.name }}
+          </h2>
+        </header>
+        <div
+          class="asset-cards"
+          role="list"
+          [attr.aria-label]="technique.name + ' remediation tasks'"
+        >
           @for (asset of technique.assets; track asset.id) {
-          <app-remediation-card [remediation]="asset" />
+          <div role="listitem">
+            <app-remediation-card [remediation]="asset" />
+          </div>
           }
         </div>
-      </div>
+      </section>
       }
     </div>
   </div>
-</div>
+</main>

@@ -1,44 +1,52 @@
 <div class="central-panel">
-  <div class="paragraph">
-    <h2 class="paragraph__title">
+  <section class="paragraph" aria-labelledby="description-heading">
+    <h2 id="description-heading" class="paragraph__title">
       {{ "dashboard.central_panel.paragraph_one.title" | translate }}
     </h2>
     <p class="paragraph__content">
       {{ "dashboard.central_panel.paragraph_one.content" | translate }}
     </p>
-  </div>
-  <div class="paragraph">
-    <h2 class="paragraph__title">
+  </section>
+  <section class="paragraph" aria-labelledby="workflow-heading">
+    <h2 id="workflow-heading" class="paragraph__title">
       {{ "dashboard.central_panel.paragraph_two.title" | translate }}
     </h2>
     <p class="paragraph__content">
       {{ "dashboard.central_panel.paragraph_two.content" | translate }}
     </p>
-  </div>
+  </section>
 
-  <div class="details">
-    @for (detail of details; track detail.label) {
-    <div class="details-row">
-      <span class="details-label">{{ detail.label | translate }}</span>
-      <span class="details-value">
-        @if(detail.hasCheck) {
-        <span class="material-icons">check</span>
-        }
-        {{ detail.value }}
-      </span>
+  <section class="details" aria-labelledby="system-details-heading">
+    <h3 id="system-details-heading" class="sr-only">System Details</h3>
+    <dl class="details-list">
+      @for (detail of details; track detail.label) {
+      <div class="details-row">
+        <dt class="details-label">{{ detail.label | translate }}</dt>
+        <dd class="details-value">
+          @if(detail.hasCheck) {
+          <span class="material-icons" aria-hidden="true">check</span>
+          }
+          {{ detail.value }}
+        </dd>
+      </div>
+      } @empty {
+      <div class="details-row">
+        <dt class="details-label">
+          {{ "dashboard.system_details.last_scan" | translate }}
+        </dt>
+        <dd class="details-value">{{ "common.loading" | translate }}</dd>
+      </div>
+      }
+    </dl>
+  </section>
+  <section class="remediation-assets" aria-labelledby="remediation-heading">
+    <h3 id="remediation-heading" class="sr-only">Active Remediation Tasks</h3>
+    <div class="remediation-cards" role="list">
+      @for (asset of remediationAssets; track asset.id) {
+      <div role="listitem">
+        <app-remediation-card [remediation]="asset" />
+      </div>
+      }
     </div>
-    } @empty {
-    <div class="details-row">
-      <span class="details-label">{{
-        "dashboard.system_details.last_scan" | translate
-      }}</span>
-      <span class="details-value">{{ "common.loading" | translate }}</span>
-    </div>
-    }
-  </div>
-  <div class="remediation-assets">
-    @for (asset of remediationAssets; track asset.id) {
-    <app-remediation-card [remediation]="asset" />
-    }
-  </div>
+  </section>
 </div>

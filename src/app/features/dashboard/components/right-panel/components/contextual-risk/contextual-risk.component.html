@@ -1,83 +1,119 @@
-<div class="contextual-risk">
-  <h1 class="title">{{ "dashboard.contextual_risk.title" | translate }}</h1>
+<section class="contextual-risk" aria-labelledby="contextual-risk-heading">
+  <h2 id="contextual-risk-heading" class="title">
+    {{ "dashboard.contextual_risk.title" | translate }}
+  </h2>
 
   <div class="container">
-    <div class="risk-table">
-      <div class="table-header risk-table__header risk-table__row">
-        <span>{{ "common.asset" | translate }}</span>
-        <span>{{ "dashboard.contextual_risk.title" | translate }}</span>
+    <div
+      class="risk-table"
+      role="table"
+      aria-label="Asset risk assessment table"
+    >
+      <div class="table-header risk-table__header risk-table__row" role="row">
+        <div role="columnheader" aria-sort="none">
+          {{ "common.asset" | translate }}
+        </div>
+        <div role="columnheader" aria-sort="none">
+          {{ "dashboard.contextual_risk.title" | translate }}
+        </div>
       </div>
 
-      <div class="risk-table__row">
-        <div class="asset-info">
-          <app-server-icon></app-server-icon>
+      <div class="risk-table__row" role="row">
+        <div class="asset-info" role="cell">
+          <app-server-icon aria-hidden="true"></app-server-icon>
           <div class="asset-details">
             <h3>{{ "dashboard.contextual_risk.asset_name_1" | translate }}</h3>
             <p>{{ "dashboard.contextual_risk.asset_ip_1" | translate }}</p>
           </div>
         </div>
-        <div class="risk-badge risk-critical">
+        <div
+          class="risk-badge risk-critical"
+          role="cell"
+          aria-label="Critical risk level"
+        >
           {{ "dashboard.asset_flow.critical" | translate }}
         </div>
       </div>
 
-      <div class="risk-table__row">
-        <div class="asset-info">
-          <app-server-icon></app-server-icon>
+      <div class="risk-table__row" role="row">
+        <div class="asset-info" role="cell">
+          <app-server-icon aria-hidden="true"></app-server-icon>
           <div class="asset-details">
             <h3>{{ "dashboard.contextual_risk.asset_name_2" | translate }}</h3>
             <p>{{ "dashboard.contextual_risk.asset_ip_2" | translate }}</p>
           </div>
         </div>
-        <div class="risk-badge risk-critical">
+        <div
+          class="risk-badge risk-critical"
+          role="cell"
+          aria-label="Critical risk level"
+        >
           {{ "dashboard.asset_flow.critical" | translate }}
         </div>
       </div>
 
-      <div class="risk-table__footer">
-        <div class="pagination-arrow disabled">
-          <span class="material-icons-outlined">chevron_left</span>
-        </div>
-        <span>Showing 1-2 of 2</span>
-        <div class="pagination-arrow disabled">
-          <span class="material-icons-outlined">chevron_right</span>
-        </div>
+      <div class="risk-table__footer" role="row">
+        <button
+          class="pagination-arrow disabled"
+          aria-label="Previous page"
+          disabled
+        >
+          <span class="material-icons-outlined" aria-hidden="true"
+            >chevron_left</span
+          >
+        </button>
+        <span aria-live="polite">Showing 1-2 of 2</span>
+        <button
+          class="pagination-arrow disabled"
+          aria-label="Next page"
+          disabled
+        >
+          <span class="material-icons-outlined" aria-hidden="true"
+            >chevron_right</span
+          >
+        </button>
       </div>
     </div>
 
-    <div class="risk-summary">
-      <h3>{{ "dashboard.contextual_risk.title" | translate }}</h3>
+    <div class="risk-summary" aria-labelledby="risk-summary-heading">
+      <h3 id="risk-summary-heading">
+        {{ "dashboard.contextual_risk.title" | translate }}
+      </h3>
 
       <div class="container">
-        <div class="risk-stats">
-          <div class="risk-stat">
-            <div class="risk-dot critical"></div>
-            <span class="count">2</span>
+        <div class="risk-stats" role="list" aria-label="Risk level statistics">
+          <div class="risk-stat" role="listitem">
+            <div class="risk-dot critical" aria-hidden="true"></div>
+            <span class="count" aria-label="2 critical risks">2</span>
             <span class="label">Critical</span>
           </div>
-          <div class="risk-stat">
-            <div class="risk-dot high"></div>
-            <span class="count">0</span>
+          <div class="risk-stat" role="listitem">
+            <div class="risk-dot high" aria-hidden="true"></div>
+            <span class="count" aria-label="0 high risks">0</span>
             <span class="label">High</span>
           </div>
-          <div class="risk-stat">
-            <div class="risk-dot medium"></div>
-            <span class="count">0</span>
+          <div class="risk-stat" role="listitem">
+            <div class="risk-dot medium" aria-hidden="true"></div>
+            <span class="count" aria-label="0 medium risks">0</span>
             <span class="label">Medium</span>
           </div>
-          <div class="risk-stat">
-            <div class="risk-dot low"></div>
-            <span class="count">0</span>
+          <div class="risk-stat" role="listitem">
+            <div class="risk-dot low" aria-hidden="true"></div>
+            <span class="count" aria-label="0 low risks">0</span>
             <span class="label">Low</span>
           </div>
         </div>
 
-        <div class="risk-chart">
-          <div class="chart-circle">
+        <div
+          class="risk-chart"
+          role="img"
+          aria-label="Risk distribution chart showing 2 total risks"
+        >
+          <div class="chart-circle" aria-hidden="true">
             <div class="chart-number">2</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

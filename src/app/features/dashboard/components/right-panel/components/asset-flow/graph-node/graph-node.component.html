@@ -1,5 +1,5 @@
-<div class="graph-node">
-  <div class="server-icon">
+<div class="graph-node" [attr.aria-label]="title + ' network node'">
+  <div class="server-icon" aria-hidden="true">
     <span class="material-icons-outlined">dns</span>
   </div>
   <span class="graph-node__title">{{ title }}</span>

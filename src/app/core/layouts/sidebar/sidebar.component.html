@@ -2,56 +2,93 @@
   class="sidebar-container"
   [class.collapsed]="isCollapsed"
   (click)="onToggleSidebar()"
+  role="button"
+  tabindex="0"
+  [attr.aria-label]="'Toggle sidebar'"
+  (keydown.enter)="onToggleSidebar()"
+  (keydown.space)="onToggleSidebar()"
 ></div>
-<aside class="sidebar" [class.collapsed]="isCollapsed">
-  <div class="sidebar-toggle" (click)="onToggleSidebar()">
+<aside
+  class="sidebar"
+  [class.collapsed]="isCollapsed"
+  role="complementary"
+  aria-label="Main navigation"
+>
+  <button
+    class="sidebar-toggle"
+    (click)="onToggleSidebar()"
+    [attr.aria-label]="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+    [attr.aria-expanded]="!isCollapsed"
+    type="button"
+  >
     @if (isCollapsed) {
-    <span class="material-icons">keyboard_arrow_right</span>
+    <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
     } @else {
-    <span class="material-icons">keyboard_arrow_left</span>
+    <span class="material-icons" aria-hidden="true">keyboard_arrow_left</span>
     }
-  </div>
-  <div class="mobile-close-icon" (click)="onToggleSidebar()">
-    <span class="material-icons">close</span>
-  </div>
-  <div class="navigation-section">
-    <ul class="navigation-section__list">
+  </button>
+  <button
+    class="mobile-close-icon"
+    (click)="onToggleSidebar()"
+    aria-label="Close sidebar"
+    type="button"
+  >
+    <span class="material-icons" aria-hidden="true">close</span>
+  </button>
+  <nav
+    class="navigation-section"
+    role="navigation"
+    aria-label="Main navigation"
+  >
+    <ul class="navigation-section__list" role="list">
       @for (item of navigationItems; track item) {
       <li
         class="navigation-section__item"
         [routerLink]="item.route"
         routerLinkActive="active"
+        role="listitem"
+        tabindex="0"
+        [attr.aria-current]="item.route === currentRoute ? 'page' : null"
       >
-        <span class="material-icons">{{ item.icon }}</span>
+        <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
     </ul>
-    <ul class="navigation-section__list">
+    <ul
+      class="navigation-section__list"
+      role="list"
+      aria-label="Secondary navigation"
+    >
       @for (item of secondaryNavigationItems; track item) {
       <li
         class="navigation-section__item"
         [routerLink]="item.route"
         routerLinkActive="active"
+        role="listitem"
+        tabindex="0"
+        [attr.aria-current]="item.route === currentRoute ? 'page' : null"
       >
-        <span class="material-icons">{{ item.icon }}</span>
+        <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
     </ul>
-  </div>
+  </nav>
 
-  <div class="user-section">
+  <div class="user-section" role="region" aria-label="User information">
     <div class="user-info">
-      <span class="user-info__avatar"
-        ><span class="material-icons">person</span></span
-      >
+      <span class="user-info__avatar" aria-hidden="true">
+        <span class="material-icons">person</span>
+      </span>
       <div class="user-info__details">
-        <span>{{ userProfile.name | translate }}</span>
-        <span>{{ userProfile.email | translate }}</span>
+        <span class="user-name">{{ userProfile.name | translate }}</span>
+        <span class="user-email">{{ userProfile.email | translate }}</span>
       </div>
     </div>
 
-    <span class="material-icons user-section__logout">logout</span>
+    <button class="user-section__logout" aria-label="Logout" type="button">
+      <span class="material-icons" aria-hidden="true">logout</span>
+    </button>
   </div>
 </aside>

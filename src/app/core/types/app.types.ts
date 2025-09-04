@@ -170,6 +170,7 @@ export interface RemediationAsset {
   id: string;
   title: string;
   type: string;
+  ipAddress: string;
   description: string;
   summary?: string;
   riskLevel: 'low' | 'medium' | 'high' | 'critical';

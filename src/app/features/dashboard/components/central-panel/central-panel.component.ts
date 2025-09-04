@@ -49,6 +49,7 @@ export class CentralPanelComponent {
       id: 'asset-a1',
       title: 'Firewall Configuration',
       type: 'Network Device',
+      ipAddress: '192.168.1.1',
       description: 'Update firewall rules and access control lists',
       summary:
         'Configure inbound/outbound traffic rules, implement IP whitelisting, and set up intrusion prevention systems.',

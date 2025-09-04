@@ -22,6 +22,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   @Input() isCollapsed = false;
   @Output() toggleSidebar = new EventEmitter<void>();
 
+  currentRoute = '';
+
   navigationItems: NavigationItem[] = [
     {
       label: 'navigation.dashboard',

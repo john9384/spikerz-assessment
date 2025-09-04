@@ -3,11 +3,19 @@
     [isCollapsed]="isSidebarCollapsed"
     (toggleSidebar)="toggleSidebar()"
   ></app-sidebar>
-  <main class="main-content">
-    <nav class="mobile-topbar">
-      <div class="sidebar-toggle" (click)="toggleSidebar()">
-        <span class="material-icons">menu</span>
-      </div>
+  <main class="main-content" role="main" aria-label="Main content area">
+    <nav class="mobile-topbar" role="navigation" aria-label="Mobile navigation">
+      <button
+        class="sidebar-toggle"
+        (click)="toggleSidebar()"
+        [attr.aria-label]="
+          isSidebarCollapsed ? 'Open sidebar' : 'Close sidebar'
+        "
+        [attr.aria-expanded]="!isSidebarCollapsed"
+        type="button"
+      >
+        <span class="material-icons" aria-hidden="true">menu</span>
+      </button>
     </nav>
     <router-outlet></router-outlet>
   </main>

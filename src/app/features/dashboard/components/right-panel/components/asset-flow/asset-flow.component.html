@@ -1,59 +1,70 @@
-<div class="asset-flow">
-  <h1 class="title">{{ "dashboard.asset_flow.title" | translate }}</h1>
+<section class="asset-flow" aria-labelledby="asset-flow-heading">
+  <h2 id="asset-flow-heading" class="title">
+    {{ "dashboard.asset_flow.title" | translate }}
+  </h2>
   <div class="container">
-    <div class="network-canvas">
-      <span class="node node-1"
-        ><app-graph-node [title]="'dashboard.asset_flow.firewall' | translate"
-      /></span>
-      <span class="edge edge-1">&nbsp;</span>
-      <span class="node node-2"
-        ><app-graph-node
+    <div
+      class="network-canvas"
+      role="img"
+      aria-label="Network topology diagram showing firewall, load balancer, web server, API gateway, and database connections"
+    >
+      <span class="node node-1" role="img" aria-label="Firewall node">
+        <app-graph-node [title]="'dashboard.asset_flow.firewall' | translate" />
+      </span>
+      <span class="edge edge-1" aria-hidden="true">&nbsp;</span>
+      <span class="node node-2" role="img" aria-label="Load balancer node">
+        <app-graph-node
           [title]="'dashboard.asset_flow.load_balancer' | translate"
-      /></span>
-      <span class="edge edge-2">&nbsp;</span>
-      <span class="node node-3"
-        ><app-graph-node
+        />
+      </span>
+      <span class="edge edge-2" aria-hidden="true">&nbsp;</span>
+      <span class="node node-3" role="img" aria-label="Web server node">
+        <app-graph-node
           [title]="'dashboard.asset_flow.web_server' | translate"
-      /></span>
-      <span class="edge edge-3">&nbsp;</span>
+        />
+      </span>
+      <span class="edge edge-3" aria-hidden="true">&nbsp;</span>
 
-      <span class="edge edge-4">&nbsp;</span>
-      <span class="edge edge-5">&nbsp;</span>
-      <span class="node node-4"
-        ><app-graph-node
+      <span class="edge edge-4" aria-hidden="true">&nbsp;</span>
+      <span class="edge edge-5" aria-hidden="true">&nbsp;</span>
+      <span class="node node-4" role="img" aria-label="API gateway node">
+        <app-graph-node
           [title]="'dashboard.asset_flow.api_gateway' | translate"
-      /></span>
-      <span class="node node-5"
-        ><app-graph-node [title]="'dashboard.asset_flow.database' | translate"
-      /></span>
+        />
+      </span>
+      <span class="node node-5" role="img" aria-label="Database node">
+        <app-graph-node [title]="'dashboard.asset_flow.database' | translate" />
+      </span>
 
-      <span class="edge edge-6">&nbsp;</span>
-      <span class="edge edge-7">&nbsp;</span>
+      <span class="edge edge-6" aria-hidden="true">&nbsp;</span>
+      <span class="edge edge-7" aria-hidden="true">&nbsp;</span>
     </div>
 
-    <div class="legend">
-      <div class="legend__item">
-        <div class="legend__icon red">
+    <div class="legend" role="list" aria-label="Risk level legend">
+      <div class="legend__item" role="listitem">
+        <div class="legend__icon red" aria-hidden="true">
           <span class="material-icons red">verified_user</span>
         </div>
-        <span class="red">{{
-          "dashboard.asset_flow.critical" | translate
-        }}</span>
+        <span class="red" aria-label="Critical risk level">
+          {{ "dashboard.asset_flow.critical" | translate }}
+        </span>
       </div>
-      <div class="legend__item">
-        <div class="legend__icon orange">
+      <div class="legend__item" role="listitem">
+        <div class="legend__icon orange" aria-hidden="true">
           <span class="material-icons orange">verified_user</span>
         </div>
-        <span class="orange">{{
-          "dashboard.asset_flow.high" | translate
-        }}</span>
+        <span class="orange" aria-label="High risk level">
+          {{ "dashboard.asset_flow.high" | translate }}
+        </span>
       </div>
-      <div class="legend__item">
-        <div class="legend__icon green">
+      <div class="legend__item" role="listitem">
+        <div class="legend__icon green" aria-hidden="true">
           <span class="material-icons">verified_user</span>
         </div>
-        <span class="green">{{ "dashboard.asset_flow.low" | translate }}</span>
+        <span class="green" aria-label="Low risk level">
+          {{ "dashboard.asset_flow.low" | translate }}
+        </span>
       </div>
     </div>
   </div>
-</div>
+</section>

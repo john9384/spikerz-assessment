@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import type { RemediationTechnique } from '../../core/types/app.types';
 import { RemediationCardComponent } from '../../shared/components/remediation-card/remediation-card.component';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-remediation',
   standalone: true,
-  imports: [CommonModule, RemediationCardComponent],
+  imports: [CommonModule, RemediationCardComponent, TranslatePipe],
   templateUrl: './remediation.component.html',
   styleUrls: ['./remediation.component.scss'],
 })
@@ -24,7 +25,7 @@ export class RemediationComponent {
           title: 'Firewall Configuration',
           type: 'Network Device',
           description: 'Update firewall rules and access control lists',
-
+          ipAddress: '192.168.1.1',
           riskLevel: 'high',
           status: 'in_progress',
         },
@@ -33,6 +34,7 @@ export class RemediationComponent {
           title: 'VPN Access Management',
           type: 'Authentication Service',
           description: 'Review and update VPN user access permissions',
+          ipAddress: '192.168.1.2',
           summary:
             'Audit current VPN users, implement multi-factor authentication, and establish connection logging.',
           riskLevel: 'medium',
@@ -51,6 +53,7 @@ export class RemediationComponent {
           id: 'asset-b1',
           title: 'Code Vulnerability Scan',
           type: 'Application',
+          ipAddress: '192.168.1.3',
           description:
             'Perform automated security scanning of application code',
           riskLevel: 'critical',
@@ -60,6 +63,7 @@ export class RemediationComponent {
           id: 'asset-b2',
           title: 'Dependency Update',
           type: 'Package Manager',
+          ipAddress: '192.168.1.4',
           description: 'Update vulnerable third-party dependencies',
           summary:
             'Identify outdated packages with known CVEs, test compatibility, and implement secure versions across development and production environments.',
@@ -79,6 +83,7 @@ export class RemediationComponent {
           id: 'asset-c1',
           title: 'Database Encryption',
           type: 'Database',
+          ipAddress: '192.168.1.5',
           description: 'Implement encryption for sensitive data at rest',
           riskLevel: 'medium',
           status: 'pending',
@@ -87,6 +92,7 @@ export class RemediationComponent {
           id: 'asset-c2',
           title: 'File System Security',
           type: 'Storage',
+          ipAddress: '192.168.1.6',
           description: 'Secure file access and implement encryption',
           summary:
             'Set proper file permissions, implement file-level encryption for sensitive documents, and audit file access logs.',
