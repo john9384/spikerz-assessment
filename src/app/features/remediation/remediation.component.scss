@@ -24,7 +24,7 @@
     .remediation-techniques {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1rem;
       height: calc(100vh - 200px);
 
       @media (max-width: 1200px) {

@@ -24,8 +24,7 @@ export class RemediationComponent {
           title: 'Firewall Configuration',
           type: 'Network Device',
           description: 'Update firewall rules and access control lists',
-          summary:
-            'Configure inbound/outbound traffic rules, implement IP whitelisting, and set up intrusion prevention systems.',
+
           riskLevel: 'high',
           status: 'in_progress',
         },
@@ -54,8 +53,6 @@ export class RemediationComponent {
           type: 'Application',
           description:
             'Perform automated security scanning of application code',
-          summary:
-            'Run SAST tools, identify SQL injection vulnerabilities, check for XSS patterns, and review authentication mechanisms.',
           riskLevel: 'critical',
           status: 'in_progress',
         },
@@ -83,8 +80,6 @@ export class RemediationComponent {
           title: 'Database Encryption',
           type: 'Database',
           description: 'Implement encryption for sensitive data at rest',
-          summary:
-            'Configure transparent data encryption, encrypt backup files, and implement key rotation policies.',
           riskLevel: 'medium',
           status: 'pending',
         },

@@ -1,5 +1,7 @@
+@import "../../../../../../../assets/styles/mixins";
+
 .asset-flow {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -24,6 +26,7 @@
     position: relative;
     .node {
       position: absolute;
+      z-index: 2;
     }
 
     .node-1 {
@@ -66,16 +69,25 @@
       top: 46%;
       left: 65%;
       width: 40px;
+      @include respond-below(md) {
+        width: 30px;
+      }
     }
     .edge-4 {
       top: 24%;
       right: 14%;
       width: 40px;
+      @include respond-below(md) {
+        display: none;
+      }
     }
     .edge-5 {
       top: 68%;
       right: 14%;
       width: 40px;
+      @include respond-below(md) {
+        display: none;
+      }
     }
     .edge-6 {
       top: 34%;
