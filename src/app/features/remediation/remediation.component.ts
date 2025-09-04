@@ -1,19 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../shared/pipes/translate.pipe';
-import { ServerIconComponent } from '../../shared/components/server-icon';
-import { RemediationCardComponent } from '../../shared/components/remediation-card/remediation-card.component';
+import { Component } from '@angular/core';
 import type { RemediationTechnique } from '../../core/types/app.types';
+import { RemediationCardComponent } from '../../shared/components/remediation-card/remediation-card.component';
 
 @Component({
   selector: 'app-remediation',
   standalone: true,
-  imports: [
-    CommonModule,
-    TranslatePipe,
-    ServerIconComponent,
-    RemediationCardComponent,
-  ],
+  imports: [CommonModule, RemediationCardComponent],
   templateUrl: './remediation.component.html',
   styleUrls: ['./remediation.component.scss'],
 })
@@ -31,8 +24,7 @@ export class RemediationComponent {
           title: 'Firewall Configuration',
           type: 'Network Device',
           description: 'Update firewall rules and access control lists',
-          summary:
-            'Configure inbound/outbound traffic rules, implement IP whitelisting, and set up intrusion prevention systems.',
+
           riskLevel: 'high',
           status: 'in_progress',
         },
@@ -61,8 +53,6 @@ export class RemediationComponent {
           type: 'Application',
           description:
             'Perform automated security scanning of application code',
-          summary:
-            'Run SAST tools, identify SQL injection vulnerabilities, check for XSS patterns, and review authentication mechanisms.',
           riskLevel: 'critical',
           status: 'in_progress',
         },
@@ -90,8 +80,6 @@ export class RemediationComponent {
           title: 'Database Encryption',
           type: 'Database',
           description: 'Implement encryption for sensitive data at rest',
-          summary:
-            'Configure transparent data encryption, encrypt backup files, and implement key rotation policies.',
           riskLevel: 'medium',
           status: 'pending',
         },

@@ -1,5 +1,7 @@
+@import "../../../../../../../assets/styles/mixins";
+
 .asset-flow {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -19,8 +21,86 @@
 
   .network-canvas {
     width: 100%;
-    height: 300px;
+    height: 220px;
     border-radius: 8px;
+    position: relative;
+    .node {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .node-1 {
+      top: 31%;
+      left: 5%;
+    }
+    .node-2 {
+      top: 31%;
+      left: 30%;
+    }
+    .node-3 {
+      top: 31%;
+      left: 55%;
+    }
+    .node-4 {
+      top: 5%;
+      right: 5%;
+    }
+    .node-5 {
+      top: 58%;
+      right: 5%;
+    }
+
+    .edge {
+      position: absolute;
+      display: block;
+      background: var(--grey-300);
+      width: 85px;
+      height: 1px;
+    }
+    .edge-1 {
+      top: 46%;
+      left: 15%;
+    }
+    .edge-2 {
+      top: 46%;
+      left: 40%;
+    }
+    .edge-3 {
+      top: 46%;
+      left: 65%;
+      width: 40px;
+      @include respond-below(md) {
+        width: 30px;
+      }
+    }
+    .edge-4 {
+      top: 24%;
+      right: 14%;
+      width: 40px;
+      @include respond-below(md) {
+        display: none;
+      }
+    }
+    .edge-5 {
+      top: 68%;
+      right: 14%;
+      width: 40px;
+      @include respond-below(md) {
+        display: none;
+      }
+    }
+    .edge-6 {
+      top: 34%;
+      left: 71%;
+      width: 57px;
+      transform: rotate(315deg);
+    }
+    .edge-7 {
+      top: 57%;
+      left: 71%;
+      width: 57px;
+      transform: rotate(45deg);
+    }
   }
 
   .legend {

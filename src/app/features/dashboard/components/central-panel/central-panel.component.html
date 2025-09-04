@@ -15,6 +15,7 @@
       {{ "dashboard.central_panel.paragraph_two.content" | translate }}
     </p>
   </div>
+
   <div class="details">
     @for (detail of details; track detail.label) {
     <div class="details-row">
@@ -31,6 +32,11 @@
       <span class="details-label">Lorem Ipsum Dolor</span>
       <span class="details-value">Lorem Ipsum Dolor</span>
     </div>
+    }
+  </div>
+  <div class="remediation-assets">
+    @for (asset of remediationAssets; track asset.id) {
+    <app-remediation-card [remediation]="asset" />
     }
   </div>
 </div>

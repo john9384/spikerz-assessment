@@ -1,3 +1,8 @@
+<div
+  class="sidebar-container"
+  [class.collapsed]="isCollapsed"
+  (click)="onToggleSidebar()"
+></div>
 <aside class="sidebar" [class.collapsed]="isCollapsed">
   <div class="sidebar-toggle" (click)="onToggleSidebar()">
     @if (isCollapsed) {

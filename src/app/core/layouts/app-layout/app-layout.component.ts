@@ -13,19 +13,15 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class AppLayoutComponent implements OnInit, OnDestroy {
   isSidebarCollapsed = false;
 
-  ngOnInit(): void {
-    // Initialize component safely
-  }
+  ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    // Clean up any subscriptions or resources
-  }
+  ngOnDestroy(): void {}
 
   toggleSidebar(): void {
     try {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
     } catch (error) {
-      console.error('Error toggling sidebar:', error);
+      console.error(error);
     }
   }
 }
