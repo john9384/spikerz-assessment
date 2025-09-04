@@ -15,7 +15,38 @@ export class TranslationService {
   private translations: TranslationData = {};
   private translationsLoaded = new BehaviorSubject<boolean>(false);
 
-  private fallbackTranslations: TranslationData = {};
+  private fallbackTranslations: TranslationData = {
+    navigation: {
+      dashboard: 'Dashboard',
+      remediation: 'Remediation',
+      vulnerabilities: 'Vulnerabilities',
+      risk: 'Risk Assessment',
+      profile: 'Profile',
+      notifications: 'Notifications',
+    },
+    remediation: {
+      title: 'Remediation',
+      subtitle: 'Security remediation techniques and strategies',
+      techniques: {
+        technique_a: 'remediation technique A',
+        technique_b: 'remediation technique B',
+        technique_c: 'remediation technique C',
+      },
+      assets: {
+        server: 'Server',
+        lorem_t: 'Lorem T',
+        lorem_s: 'Lorem S',
+        lorem_p: 'Lorem P',
+        description: 'Lorem Ipsum Dolor Sit Amet Consectetur.',
+        details_a:
+          'Lorem Ipsum Dolor Sit Amet Consectetur. In Laoreet Elementum Luctus Odio, Id Enim Urna.',
+        details_b:
+          'Lorem Ipsum Dolor Sit Amet Consectetur. Quis Viverra Etiam Pellentesque Lectus Semper In Massa Purus. Auctor Aenean Aenean Senectus Massa Dignissim Vehicula Mi Erat Purus. Praesent Scelerisque Aliquet Metus Sagittis Dictum Sed Sed. Sed Venenatis Sed Urna Quam.',
+        details_c:
+          'Lorem Ipsum Dolor Sit Amet Consectetur. Nunc Vitae Tortor Convallis Vitae Arcu. Magna.',
+      },
+    },
+  };
 
   constructor(private http: HttpClient) {
     this.translations = this.fallbackTranslations;
@@ -30,23 +61,19 @@ export class TranslationService {
    */
   loadTranslations(lang: string): Observable<boolean> {
     this.currentLanguage = lang;
-    console.log(`Loading translations for language: ${lang}`);
 
     return this.http.get<TranslationData>(`/assets/i18n/${lang}.json`).pipe(
       tap((data) => {
-        console.log('Translations loaded successfully:', data);
         this.translations = data;
         this.translationsLoaded.next(true);
       }),
       map(() => true),
-      catchError((error) => {
-        console.error('Failed to load translations:', error);
+      catchError(() => {
         // Fallback to English if loading fails
         if (lang !== 'en') {
           return this.loadTranslations('en');
         }
         // If English also fails, use fallback translations
-        console.log('Using fallback translations');
         this.translations = this.fallbackTranslations;
         this.translationsLoaded.next(true);
         return of(false);
@@ -58,9 +85,6 @@ export class TranslationService {
    * Get translation by key
    */
   translate(key: string, params?: Record<string, string | number>): string {
-    console.log('Translating key:', key);
-    console.log('Current translations:', this.translations);
-    
     const keys = key.split('.');
     let value: unknown = this.translations;
 
@@ -68,13 +92,10 @@ export class TranslationService {
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
-        console.log(`Found key "${k}":`, value);
       } else {
-        console.log(`Key "${k}" not found in:`, value);
         // Try fallback translations if main translations don't have the key
         value = this.getFallbackValue(keys);
         if (value === undefined) {
-          console.log('Key not found in fallback either, returning key');
           return key; // Return key if translation not found anywhere
         }
         break;
@@ -83,11 +104,9 @@ export class TranslationService {
 
     // If value is not a string, return the key
     if (typeof value !== 'string') {
-      console.log('Value is not a string:', value);
       return key;
     }
 
-    console.log('Final translation value:', value);
     // Replace parameters in the translation
     if (params) {
       return this.interpolate(value, params);

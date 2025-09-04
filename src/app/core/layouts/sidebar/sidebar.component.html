@@ -12,7 +12,11 @@
   <div class="navigation-section">
     <ul class="navigation-section__list">
       @for (item of navigationItems; track item) {
-      <li class="navigation-section__item">
+      <li
+        class="navigation-section__item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+      >
         <span class="material-icons">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>
@@ -20,7 +24,11 @@
     </ul>
     <ul class="navigation-section__list">
       @for (item of secondaryNavigationItems; track item) {
-      <li class="navigation-section__item">
+      <li
+        class="navigation-section__item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+      >
         <span class="material-icons">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
       </li>

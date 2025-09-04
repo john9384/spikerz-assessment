@@ -3,6 +3,14 @@
     "title": "Spikerz Security Platform",
     "welcome": "Welcome to Spikerz Security Dashboard"
   },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "remediation": "Remediation",
+    "vulnerabilities": "Vulnerabilities",
+    "risk": "Risk Assessment",
+    "profile": "Profile",
+    "notifications": "Notifications"
+  },
   "dashboard": {
     "title": "Dashboard",
     "security_score": "Security Score",
@@ -40,22 +48,20 @@
   "remediation": {
     "title": "Remediation",
     "subtitle": "Security remediation techniques and strategies",
-    "prevention": "Prevention",
-    "detection": "Detection",
-    "response": "Response",
     "techniques": {
-      "input_validation": {
-        "title": "Input Validation",
-        "description": "Validate all user inputs to prevent injection attacks"
-      },
-      "monitoring": {
-        "title": "Monitoring",
-        "description": "Implement comprehensive logging and monitoring"
-      },
-      "incident_response": {
-        "title": "Incident Response",
-        "description": "Establish clear incident response procedures"
-      }
+      "technique_a": "remediation technique A",
+      "technique_b": "remediation technique B",
+      "technique_c": "remediation technique C"
+    },
+    "assets": {
+      "server": "Server",
+      "lorem_t": "Lorem T",
+      "lorem_s": "Lorem S",
+      "lorem_p": "Lorem P",
+      "description": "Lorem Ipsum Dolor Sit Amet Consectetur.",
+      "details_a": "Lorem Ipsum Dolor Sit Amet Consectetur. In Laoreet Elementum Luctus Odio, Id Enim Urna.",
+      "details_b": "Lorem Ipsum Dolor Sit Amet Consectetur. Quis Viverra Etiam Pellentesque Lectus Semper In Massa Purus. Auctor Aenean Aenean Senectus Massa Dignissim Vehicula Mi Erat Purus. Praesent Scelerisque Aliquet Metus Sagittis Dictum Sed Sed. Sed Venenatis Sed Urna Quam.",
+      "details_c": "Lorem Ipsum Dolor Sit Amet Consectetur. Nunc Vitae Tortor Convallis Vitae Arcu. Magna."
     }
   },
   "vulnerabilities": {
@@ -126,10 +132,8 @@
     "dashboard": "Dashboard",
     "remediation": "Remediation",
     "vulnerabilities": "Vulnerabilities",
-    "risk": "Risk",
-    "settings": "Settings",
+    "risk": "Risk Assessment",
     "profile": "Profile",
-    "logout": "Logout",
     "notifications": "Notifications"
   },
   "auth": {

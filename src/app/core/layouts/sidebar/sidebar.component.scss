@@ -99,12 +99,23 @@
       color: var(--grey-700);
       cursor: pointer;
       transition: all 0.2s ease;
+      text-decoration: none;
+      user-select: none;
 
       .material-icons {
         color: var(--grey-700);
       }
+
       &:hover {
         background-color: var(--background-hover);
+        .material-icons {
+          color: black;
+        }
+      }
+
+      &.active {
+        background-color: var(--background-hover);
+
         .material-icons {
           color: black;
         }
