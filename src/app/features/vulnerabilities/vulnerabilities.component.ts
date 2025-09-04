@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 import { DetailedVulnerability, Asset } from '../../core/types/app.types';
 import { SeverityLevel, RiskLevel } from '../../core/constants/app.constants';
-import { ServerIconComponent } from '../../shared/components/server-icon/server-icon.component';
 
 @Component({
   selector: 'app-vulnerabilities',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, ServerIconComponent],
+  imports: [CommonModule],
   templateUrl: './vulnerabilities.component.html',
   styleUrls: ['./vulnerabilities.component.scss'],
 })

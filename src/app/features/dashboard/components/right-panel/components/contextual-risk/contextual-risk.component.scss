@@ -1,5 +1,4 @@
-@import "../../../../../../../assets/styles/mixins";
-
+@use "../../../../../../../assets/styles/mixins" as *;
 .contextual-risk {
   display: flex;
   flex-direction: column;
