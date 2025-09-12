@@ -1,6 +1,17 @@
-<div class="graph-node" [attr.aria-label]="title + ' network node'">
-  <div class="server-icon" aria-hidden="true">
-    <span class="material-icons-outlined">dns</span>
+<app-tooltip [template]="tooltipTemplate" [position]="'top'" #tooltipCmp>
+  <div
+    class="graph-node"
+    [attr.aria-label]="title + ' network node'"
+    (mouseenter)="tooltipCmp.show()"
+    (mouseleave)="tooltipCmp.hide()"
+  >
+    <div class="server-icon" aria-hidden="true">
+      <span class="material-icons-outlined">dns</span>
+    </div>
+    <span class="graph-node__title">{{ title }}</span>
   </div>
-  <span class="graph-node__title">{{ title }}</span>
-</div>
+</app-tooltip>
+
+<ng-template #tooltipTemplate>
+  <ng-content select="[tooltip-content]"></ng-content>
+</ng-template>

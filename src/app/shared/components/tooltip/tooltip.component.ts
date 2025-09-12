@@ -19,21 +19,21 @@ import { CommonModule } from '@angular/common';
 export class TooltipComponent {
   @Input() text = signal('');
   @Input() template: TemplateRef<unknown> | null = null;
-  @Input() position = signal<'top' | 'bottom' | 'left' | 'right'>('top');
+  @Input() position = 'top';
   @Input() delay = signal(500);
   @Input() disabled = signal(false);
   @Input() tooltipClass = signal('');
 
   @ViewChild('tooltip', { static: true }) tooltip!: ElementRef;
 
-  private isVisibleSignal = signal(false);
+  private isVisibleSignal = signal(true);
 
   get isVisible() {
     return this.isVisibleSignal.asReadonly();
   }
 
   get positionClass() {
-    return computed(() => `tooltip--${this.position()}`);
+    return `tooltip--${this.position}`;
   }
 
   get tooltipStyle() {

@@ -4,7 +4,7 @@
     #tooltip
     class="tooltip"
     [class.tooltip--visible]="isVisible()"
-    [class]="positionClass()"
+    [class]="positionClass"
   >
     <div class="tooltip__content">
       <ng-container *ngIf="template; else textTemplate">

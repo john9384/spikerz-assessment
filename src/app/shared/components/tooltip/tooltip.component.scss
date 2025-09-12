@@ -20,10 +20,11 @@
   transform: translateY($spacing-xs);
   transition: all 0.2s ease-in-out;
   box-shadow: var(--shadow-lg);
-  max-width: 200px;
   word-wrap: break-word;
   white-space: normal;
-
+  width: fit-content;
+  max-width: fit-content;
+  min-width: fit-content;
   &--visible {
     opacity: 1;
     visibility: visible;

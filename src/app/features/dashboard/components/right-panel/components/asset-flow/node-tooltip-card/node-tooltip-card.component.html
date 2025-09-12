@@ -1,0 +1,40 @@
+<div class="tooltip-card">
+  <!-- Header -->
+  <div class="tooltip-card__header">
+    <div class="tooltip-card__icon">
+      <app-server-icon [small]="true"></app-server-icon>
+      <div class="asset-card-details-info-texts">
+        <span class="asset-type">{{ title }}</span>
+        @if (ipAddress) {
+        <span class="text-small asset-subtype">{{ ipAddress }}</span>
+        }
+      </div>
+    </div>
+    <span class="tooltip-card__title">{{ title }}</span>
+  </div>
+
+  <!-- Sections -->
+  <!-- <div class="tooltip-card__body">
+    <div *ngFor="let section of sections" class="tooltip-card__section">
+      <span class="material-icons-outlined text-muted">description</span>
+      <span class="tooltip-card__label">{{ section.label }}:</span>
+
+      <ng-container *ngFor="let hl of section.highlights">
+        <span
+          class="tooltip-card__highlight"
+          [ngClass]="'highlight--' + hl.color"
+        >
+          {{ hl.text }}
+        </span>
+      </ng-container>
+
+      <span class="tooltip-card__text">{{ section.text }}</span>
+
+      <div class="tooltip-card__tags" *ngIf="section.tags?.length">
+        <span *ngFor="let tag of section.tags" class="tooltip-card__tag">
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+  </div> -->
+</div>

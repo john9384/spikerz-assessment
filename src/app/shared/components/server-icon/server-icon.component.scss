@@ -8,6 +8,11 @@
   justify-content: center;
   transition: all 0.2s ease;
 
+  &.server-icon--small {
+    width: 36px;
+    height: 36px;
+  }
+
   .material-icons-outlined {
     color: #1874de;
     font-size: 26px;
@@ -25,6 +30,15 @@
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "liga";
+  }
+
+  &.server-icon--small {
+    width: 32px;
+    height: 32px;
+
+    .material-icons-outlined {
+      font-size: 18px;
+    }
   }
 
   // Hover effects
