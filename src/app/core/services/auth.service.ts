@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
@@ -19,30 +19,28 @@ export interface LoginCredentials {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
-  public currentUser$ = this.currentUserSubject.asObservable();
+  private currentUserSignal = signal<User | null>(null);
+  public currentUser = this.currentUserSignal.asReadonly();
+  public isAuthenticated = computed(() => !!this.currentUserSignal());
 
   constructor(private http: HttpClient) {
     this.loadStoredUser();
   }
 
   get currentUserValue(): User | null {
-    return this.currentUserSubject.value;
-  }
-
-  get isAuthenticated(): boolean {
-    return !!this.currentUserValue;
+    return this.currentUserSignal();
   }
 
   login(credentials: LoginCredentials): Observable<User> {
-    return this.http.post<User>(`${environment.apiUrl}/auth/login`, credentials)
+    return this.http
+      .post<User>(`${environment.apiUrl}/auth/login`, credentials)
       .pipe(
-        map(user => {
+        map((user) => {
           this.storeUser(user);
-          this.currentUserSubject.next(user);
+          this.currentUserSignal.set(user);
           return user;
         })
       );
@@ -50,18 +48,17 @@ export class AuthService {
 
   logout(): void {
     this.removeStoredUser();
-    this.currentUserSubject.next(null);
+    this.currentUserSignal.set(null);
   }
 
   refreshToken(): Observable<User> {
-    return this.http.post<User>(`${environment.apiUrl}/auth/refresh`, {})
-      .pipe(
-        map(user => {
-          this.storeUser(user);
-          this.currentUserSubject.next(user);
-          return user;
-        })
-      );
+    return this.http.post<User>(`${environment.apiUrl}/auth/refresh`, {}).pipe(
+      map((user) => {
+        this.storeUser(user);
+        this.currentUserSignal.set(user);
+        return user;
+      })
+    );
   }
 
   hasPermission(permission: string): boolean {
@@ -83,7 +80,7 @@ export class AuthService {
     if (storedUser) {
       try {
         const user = JSON.parse(storedUser);
-        this.currentUserSubject.next(user);
+        this.currentUserSignal.set(user);
       } catch {
         this.removeStoredUser();
       }

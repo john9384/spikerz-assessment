@@ -1,0 +1,19 @@
+<div class="tooltip-container" [class]="tooltipStyle()">
+  <ng-content></ng-content>
+  <div
+    #tooltip
+    class="tooltip"
+    [class.tooltip--visible]="isVisible()"
+    [class]="positionClass()"
+  >
+    <div class="tooltip__content">
+      <ng-container *ngIf="template; else textTemplate">
+        <ng-container *ngTemplateOutlet="template"></ng-container>
+      </ng-container>
+      <ng-template #textTemplate>
+        {{ text() }}
+      </ng-template>
+    </div>
+    <div class="tooltip__arrow"></div>
+  </div>
+</div>

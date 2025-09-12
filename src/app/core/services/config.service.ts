@@ -1,8 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-
+import { Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 export interface AppConfig {
@@ -28,67 +25,72 @@ export interface AppConfig {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConfigService {
-  private configSubject = new BehaviorSubject<AppConfig>(this.getDefaultConfig());
-  public config$ = this.configSubject.asObservable();
+  private configSignal = signal<AppConfig>(this.getDefaultConfig());
+  public config = this.configSignal.asReadonly();
 
   constructor(private http: HttpClient) {
     this.loadConfig();
   }
 
-  get config(): AppConfig {
-    return this.configSubject.value;
+  get configValue(): AppConfig {
+    return this.configSignal();
   }
 
   get apiUrl(): string {
-    return this.config.apiUrl;
+    return this.configSignal().apiUrl;
   }
 
   get appName(): string {
-    return this.config.appName;
+    return this.configSignal().appName;
   }
 
   get version(): string {
-    return this.config.version;
+    return this.configSignal().version;
   }
 
   get features(): AppConfig['features'] {
-    return this.config.features;
+    return this.configSignal().features;
   }
 
   get theme(): AppConfig['theme'] {
-    return this.config.theme;
+    return this.configSignal().theme;
   }
 
   get notifications(): AppConfig['notifications'] {
-    return this.config.notifications;
+    return this.configSignal().notifications;
   }
 
   isFeatureEnabled(feature: keyof AppConfig['features']): boolean {
-    return this.config.features[feature] ?? false;
+    return this.configSignal().features[feature] ?? false;
   }
 
   updateConfig(updates: Partial<AppConfig>): void {
-    const newConfig = { ...this.config, ...updates };
-    this.configSubject.next(newConfig);
+    const newConfig = { ...this.configSignal(), ...updates };
+    this.configSignal.set(newConfig);
     this.saveConfig(newConfig);
   }
 
   updateTheme(themeUpdates: Partial<AppConfig['theme']>): void {
-    const newTheme = { ...this.config.theme, ...themeUpdates };
+    const newTheme = { ...this.configSignal().theme, ...themeUpdates };
     this.updateConfig({ theme: newTheme });
   }
 
-  updateNotifications(notificationUpdates: Partial<AppConfig['notifications']>): void {
-    const newNotifications = { ...this.config.notifications, ...notificationUpdates };
+  updateNotifications(
+    notificationUpdates: Partial<AppConfig['notifications']>
+  ): void {
+    const newNotifications = {
+      ...this.configSignal().notifications,
+      ...notificationUpdates,
+    };
     this.updateConfig({ notifications: newNotifications });
   }
 
   resetConfig(): void {
     const defaultConfig = this.getDefaultConfig();
-    this.configSubject.next(defaultConfig);
+    this.configSignal.set(defaultConfig);
     this.saveConfig(defaultConfig);
   }
 
@@ -97,7 +99,7 @@ export class ConfigService {
     if (storedConfig) {
       try {
         const config = JSON.parse(storedConfig);
-        this.configSubject.next({ ...this.getDefaultConfig(), ...config });
+        this.configSignal.set({ ...this.getDefaultConfig(), ...config });
       } catch {
         console.warn('Failed to parse stored config, using default');
       }
@@ -117,18 +119,18 @@ export class ConfigService {
         dashboard: true,
         remediation: true,
         vulnerabilities: true,
-        risk: true
+        risk: true,
       },
       theme: {
         primaryColor: '#3b82f6',
         secondaryColor: '#64748b',
-        darkMode: false
+        darkMode: false,
       },
       notifications: {
         email: true,
         push: false,
-        sms: false
-      }
+        sms: false,
+      },
     };
   }
 }
