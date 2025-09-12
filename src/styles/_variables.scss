@@ -66,7 +66,7 @@
   --transparent: transparent;
 
   // Semantic Colors
-  --text-primary: #0f172a;
+  --text-primary: #525d73;
   --text-secondary: #475569;
   --text-muted: #64748b;
   --text-inverse: #ffffff;
@@ -146,6 +146,97 @@ $spacing-2xl: 3rem; // 48px
 $spacing-3xl: 4rem; // 64px
 $spacing-4xl: 6rem; // 96px
 
+// Color Variables (SCSS)
+// Primary Colors
+$primary-50: #e6f7ed;
+$primary-100: #ccefd9;
+$primary-200: #99dfb3;
+$primary-300: #66cf8d;
+$primary-400: #33bf67;
+$primary-500: #1aad4a;
+$primary-600: #0d9b3d;
+$primary-700: #02983e;
+$primary-800: #00732e;
+$primary-900: #004d1f;
+
+// Secondary Colors
+$secondary-50: #f8fafc;
+$secondary-100: #f1f5f9;
+$secondary-200: #e2e8f0;
+$secondary-300: #cbd5e1;
+$secondary-400: #94a3b8;
+$secondary-500: #64748b;
+$secondary-600: #475569;
+$secondary-700: #334155;
+$secondary-800: #1e293b;
+$secondary-900: #0f172a;
+
+// Success Colors
+$success-50: #f0fdf4;
+$success-100: #dcfce7;
+$success-200: #bbf7d0;
+$success-300: #86efac;
+$success-400: #4ade80;
+$success-500: #22c55e;
+$success-600: #16a34a;
+$success-700: #15803d;
+$success-800: #166534;
+$success-900: #14532d;
+
+// Warning Colors
+$warning-50: #fffbeb;
+$warning-100: #fef3c7;
+$warning-200: #fde68a;
+$warning-300: #fcd34d;
+$warning-400: #fbbf24;
+$warning-500: #f59e0b;
+$warning-600: #d97706;
+$warning-700: #b45309;
+$warning-800: #92400e;
+$warning-900: #78350f;
+
+// Error Colors
+$error-50: #fef2f2;
+$error-100: #fee2e2;
+$error-200: #fecaca;
+$error-300: #fca5a5;
+$error-400: #f87171;
+$error-500: #ef4444;
+$error-600: #dc2626;
+$error-700: #b91c1c;
+$error-800: #991b1b;
+$error-900: #7f1d1d;
+
+// Neutral Colors
+$white: #ffffff;
+$black: #000000;
+$transparent: transparent;
+
+// Semantic Color Mappings
+$text-primary: #525d73;
+$text-secondary: $secondary-600;
+$text-muted: $secondary-500;
+$text-inverse: $white;
+
+$background-primary: $white;
+$background-secondary: $secondary-50;
+$background-tertiary: $secondary-100;
+$background-hover: #e9faf0;
+
+$border-primary: $secondary-200;
+$border-secondary: $secondary-300;
+
+// Shadow Variables (SCSS)
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+// Transition Variables
+$transition-fast: 0.15s ease-in-out;
+$transition-base: 0.2s ease-in-out;
+$transition-slow: 0.3s ease-in-out;
+
 // Typography Scale
 $font-size-2xs: 0.5625rem; // 9px
 $font-size-xs: 0.75rem; // 12px
@@ -183,6 +274,18 @@ $border-radius-xl: 0.75rem; // 12px
 $border-radius-2xl: 1rem; // 16px
 $border-radius-3xl: 1.5rem; // 24px
 $border-radius-full: 9999px;
+
+// Component Specific Variables
+$card-padding: $spacing-md;
+$card-border-radius: 0.75rem; // 12px - matches $border-radius-xl
+$button-padding-sm: $spacing-xs $spacing-sm;
+$button-padding-md: $spacing-sm $spacing-md;
+$button-padding-lg: $spacing-md $spacing-lg;
+
+// Interactive States
+$hover-opacity: 0.8;
+$focus-ring-width: 2px;
+$focus-ring-color: $primary-500;
 
 // Z-Index Scale
 $z-index-dropdown: 1000;

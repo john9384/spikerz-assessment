@@ -1,19 +1,20 @@
 @use "../../../../styles/variables" as *;
 
 .asset-card {
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-primary);
-  background-color: white;
-  padding: 1rem;
-  border-radius: $border-radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border-primary;
+  background-color: $background-primary;
+  padding: $card-padding;
+  border-radius: $card-border-radius;
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
-  color: #404a60;
-  font-size: 13px;
+  color: $text-primary;
+  font-size: $font-size-sm;
+  transition: box-shadow $transition-base;
 
   &:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: $shadow-md;
   }
 
   &-header {
@@ -28,8 +29,8 @@
 
   &-details {
     height: 70px;
-    background-color: #fafafa;
-    border-radius: $border-radius-xl;
+    background-color: $background-tertiary;
+    border-radius: $card-border-radius;
     display: flex;
     align-items: center;
     justify-content: space-between;
