@@ -66,18 +66,18 @@
   --transparent: transparent;
 
   // Semantic Colors
-  --text-primary: var(--secondary-900);
-  --text-secondary: var(--secondary-600);
-  --text-muted: var(--secondary-500);
-  --text-inverse: var(--white);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
 
-  --background-primary: var(--white);
-  --background-secondary: var(--secondary-50);
-  --background-tertiary: var(--secondary-100);
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-tertiary: #f1f5f9;
   --background-hover: #e9faf0;
 
-  --border-primary: var(--secondary-200);
-  --border-secondary: var(--secondary-300);
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -103,9 +103,11 @@
   --green-800: #00732e;
 
   // Font Family
-  --font-family-primary: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-mono: "SF Mono", Monaco, Inconsolata, "Roboto Mono", "Source Code Pro", monospace;
-  
+  --font-family-primary: "Public Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, Inconsolata, "Roboto Mono",
+    "Source Code Pro", monospace;
+
   // Font Sizes
   --font-size-xs: 0.75rem; // 12px
   --font-size-sm: 0.875rem; // 14px
@@ -116,7 +118,7 @@
   --font-size-3xl: 1.875rem; // 30px
   --font-size-4xl: 2.25rem; // 36px
   --font-size-5xl: 3rem; // 48px
-  
+
   // Font Weights
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -125,7 +127,7 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
-  
+
   // Line Heights
   --line-height-tight: 1.25;
   --line-height-snug: 1.375;
@@ -198,3 +200,19 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-2xl: 1400px;
+
+$h-full: 100%;
+$w-full: 100%;
+$sidebar-width: 280px;
+$sidebar-width-collapsed: 80px;
+$sidebar-toggle-size: 30px;
+$sidebar-toggle-border-radius: 50%;
+$sidebar-toggle-border-width: 3px;
+$sidebar-toggle-border-color: var(--grey-50);
+$sidebar-toggle-background-color: var(--primary-800);
+$sidebar-toggle-color: var(--white);
+$sidebar-toggle-icon-size: 24px;
+$sidebar-z-index: 1000;
+$sidebar-toggle-icon-size: 24px;
+$sidebar-z-index: 1000;
+$sidebar-toggle-icon-size: 24px;

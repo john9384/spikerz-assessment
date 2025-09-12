@@ -1,5 +1,5 @@
-@use "../../../../assets/styles/variables" as *;
-@use "../../../../assets/styles/mixins" as *;
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
 
 .sidebar-container {
   position: fixed;
@@ -19,8 +19,8 @@
 }
 
 .sidebar {
-  height: 100%;
-  width: 280px;
+  height: $h-full;
+  width: $sidebar-width;
   background-color: var(--background-primary);
   box-shadow: var(--shadow-md);
   border-top-right-radius: $border-radius-lg;
