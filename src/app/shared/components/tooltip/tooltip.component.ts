@@ -26,7 +26,7 @@ export class TooltipComponent {
 
   @ViewChild('tooltip', { static: true }) tooltip!: ElementRef;
 
-  private isVisibleSignal = signal(true);
+  private isVisibleSignal = signal(false);
 
   get isVisible() {
     return this.isVisibleSignal.asReadonly();

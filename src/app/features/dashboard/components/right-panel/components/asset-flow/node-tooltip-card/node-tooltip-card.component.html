@@ -1,40 +1,39 @@
 <div class="tooltip-card">
-  <!-- Header -->
   <div class="tooltip-card__header">
-    <div class="tooltip-card__icon">
-      <app-server-icon [small]="true"></app-server-icon>
-      <div class="asset-card-details-info-texts">
-        <span class="asset-type">{{ title }}</span>
-        @if (ipAddress) {
-        <span class="text-small asset-subtype">{{ ipAddress }}</span>
-        }
-      </div>
+    <app-server-icon [small]="true" />
+
+    <div class="tooltip-card__title">
+      <span class="tooltip-card__title-text">{{ title }}</span>
+      @if (ipAddress) {
+      <span class="text-small tooltip-card__title-ip">{{ ipAddress }}</span>
+      }
     </div>
-    <span class="tooltip-card__title">{{ title }}</span>
   </div>
 
-  <!-- Sections -->
-  <!-- <div class="tooltip-card__body">
-    <div *ngFor="let section of sections" class="tooltip-card__section">
+  <div class="tooltip-card__body">
+    @for(section of sections; track section.label) {
+    <div class="tooltip-card__section">
       <span class="material-icons-outlined text-muted">description</span>
       <span class="tooltip-card__label">{{ section.label }}:</span>
-
-      <ng-container *ngFor="let hl of section.highlights">
-        <span
-          class="tooltip-card__highlight"
-          [ngClass]="'highlight--' + hl.color"
-        >
-          {{ hl.text }}
-        </span>
-      </ng-container>
-
-      <span class="tooltip-card__text">{{ section.text }}</span>
-
-      <div class="tooltip-card__tags" *ngIf="section.tags?.length">
-        <span *ngFor="let tag of section.tags" class="tooltip-card__tag">
-          {{ tag }}
-        </span>
-      </div>
+      @for(value of section.values; track value.type) { @if(value.type ===
+      'text') {
+      <span class="tooltip-card__value tooltip-card__text">{{
+        value.value
+      }}</span>
+      } @else if(value.type === 'ip') {
+      <span class="tooltip-card__value tooltip-card__ip">{{
+        value.value
+      }}</span>
+      } @else if(value.type === 'orange-text') {
+      <span class="tooltip-card__value tooltip-card__orange-text">{{
+        value.value
+      }}</span>
+      } @else if(value.type === 'text-ip') {
+      <span class="tooltip-card__value tooltip-card__text-ip">{{
+        value.value
+      }}</span>
+      } }
     </div>
-  </div> -->
+    }
+  </div>
 </div>

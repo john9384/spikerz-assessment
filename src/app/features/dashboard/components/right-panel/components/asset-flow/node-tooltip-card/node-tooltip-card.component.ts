@@ -5,12 +5,10 @@ import { ServerIconComponent } from '../../../../../../../shared/components/serv
 export interface TooltipSection {
   label: string;
   ipAddress?: string;
-  text: string;
-  highlights?: {
-    text: string;
-    color: 'orange' | 'green' | 'blue' | 'purple';
+  values?: {
+    type: 'text' | 'ip' | 'text-ip' | 'orange-text';
+    value: string;
   }[];
-  tags?: string[];
 }
 
 @Component({

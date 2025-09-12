@@ -24,33 +24,42 @@ export class AssetFlowComponent {
     firewall: [
       {
         label: 'Lorem',
-        text: 'Loremipsum Loremipsum',
-        highlights: [{ text: 'Lorem', color: 'orange' }],
-        tags: ['1.2.3.4', 'Loremipsum', '1.2.3.4', 'Lorem 1234,5678'],
+        values: [
+          { type: 'text', value: 'Loremipsum' },
+          { type: 'orange-text', value: 'Loremipsum' },
+          { type: 'ip', value: '1.2.3.4' },
+          { type: 'text-ip', value: 'Lorem 1234,5678' },
+        ],
       },
     ],
     loadBalancer: [
       {
         label: 'Lorem',
-        text: 'Loremipsum Loremipsum',
-        highlights: [{ text: 'Lorem', color: 'orange' }],
-        tags: ['1.2.3.4', 'Loremipsum', '1.2.3.4', 'Lorem 1234,5678'],
+        values: [
+          { type: 'text', value: 'Loremipsum' },
+          { type: 'ip', value: '1.2.3.4' },
+          { type: 'text-ip', value: 'Lorem 1234,5678' },
+        ],
       },
     ],
     webServer: [
       {
         label: 'Lorem',
-        text: 'Loremipsum Loremipsum',
-        highlights: [{ text: 'Lorem', color: 'orange' }],
-        tags: ['1.2.3.4', 'Loremipsum', '1.2.3.4', 'Lorem 1234,5678'],
+        values: [
+          { type: 'text', value: 'Loremipsum' },
+          { type: 'ip', value: '1.2.3.4' },
+          { type: 'text-ip', value: 'Lorem 1234,5678' },
+        ],
       },
     ],
     apiGateway: [
       {
         label: 'Lorem',
-        text: 'Loremipsum Loremipsum',
-        highlights: [{ text: 'Lorem', color: 'orange' }],
-        tags: ['1.2.3.4', 'Loremipsum', '1.2.3.4', 'Lorem 1234,5678'],
+        values: [
+          { type: 'text', value: 'Loremipsum' },
+          { type: 'ip', value: '1.2.3.4' },
+          { type: 'text-ip', value: 'Lorem 1234,5678' },
+        ],
       },
     ],
   };

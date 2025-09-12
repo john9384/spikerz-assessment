@@ -3,31 +3,38 @@
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  height: 100px;
-
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 250px;
+  max-width: 300px &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
   &__header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #f1f5f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-    font-size: 20px;
+    gap: 0.5rem;
   }
 
   &__title {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    &-ip {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
   }
 
   &__section {
@@ -43,13 +50,29 @@
     }
   }
 
-  &__label {
-    font-weight: 600;
-    margin-right: 0.25rem;
-  }
-
-  &__text {
-    margin-left: 0.25rem;
+  .tooltip-card {
+    &__label {
+      font-weight: 600;
+    }
+    &__value {
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.1rem 0.3rem;
+    }
+    &__text {
+      font-weight: 600;
+    }
+    &__orange-text {
+      color: #f59e0b;
+    }
+    &__ip {
+      background: #ede9fe;
+      color: #7c3aed;
+    }
+    &__text-ip {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
   }
 
   &__highlight {
@@ -59,25 +82,19 @@
     padding: 0.1rem 0.3rem;
 
     &.highlight--orange {
-      color: #f59e0b;
     }
     &.highlight--green {
       background: #22c55e;
       color: #fff;
     }
     &.highlight--blue {
-      background: #dbeafe;
-      color: #1d4ed8;
     }
     &.highlight--purple {
-      background: #ede9fe;
-      color: #7c3aed;
     }
   }
 
   &__tags {
     display: flex;
-    flex-wrap: wrap;
     gap: 0.25rem;
     margin-left: 2rem;
   }
@@ -87,7 +104,7 @@
     color: #7c3aed;
     padding: 0.1rem 0.4rem;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     font-weight: 500;
   }
 }

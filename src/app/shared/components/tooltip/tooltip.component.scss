@@ -3,6 +3,7 @@
 .tooltip-container {
   position: relative;
   display: inline-block;
+  max-width: fit-content;
 }
 
 .tooltip {
@@ -23,8 +24,6 @@
   word-wrap: break-word;
   white-space: normal;
   width: fit-content;
-  max-width: fit-content;
-  min-width: fit-content;
   &--visible {
     opacity: 1;
     visibility: visible;

@@ -11,4 +11,5 @@ import { TooltipComponent } from '../../../../../../../shared/components/tooltip
 })
 export class GraphNodeComponent {
   @Input() title: string = '';
+  @Input() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
 }
