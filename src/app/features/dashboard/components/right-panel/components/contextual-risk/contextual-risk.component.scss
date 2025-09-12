@@ -34,7 +34,7 @@
   border: 1px solid var(--border-primary);
   border-radius: $border-radius-xl;
   height: 250px;
-  color: #858d9d;
+  color: $text-primary;
 
   &:hover {
     box-shadow: var(--shadow-md);
@@ -147,9 +147,10 @@
   &:hover {
     box-shadow: var(--shadow-md);
   }
-  .risk-summary h2 {
-    font-size: 1.8rem;
-    color: #212529;
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $text-primary;
   }
 
   .risk-stats {
