@@ -76,8 +76,8 @@
   --background-tertiary: #f1f5f9;
   --background-hover: #e9faf0;
 
-  --border-primary: #e2e8f0;
-  --border-secondary: #cbd5e1;
+  --border-primary: #f0f1f3;
+  --border-secondary: #f5f5f5;
 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -147,9 +147,10 @@ $spacing-3xl: 4rem; // 64px
 $spacing-4xl: 6rem; // 96px
 
 // Typography Scale
+$font-size-2xs: 0.5625rem; // 9px
 $font-size-xs: 0.75rem; // 12px
 $font-size-sm: 0.875rem; // 14px
-$font-size-base: 1rem; // 16px
+$font-size-base: 0.9375rem; // 15px
 $font-size-lg: 1.125rem; // 18px
 $font-size-xl: 1.25rem; // 20px
 $font-size-2xl: 1.5rem; // 24px
