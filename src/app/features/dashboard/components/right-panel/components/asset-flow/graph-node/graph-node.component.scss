@@ -47,7 +47,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-
+  svg {
+    fill: transparent !important;
+    stroke: #1874de !important;
+    background-color: transparent !important;
+  }
   .material-icons-outlined {
     color: #1874de;
     font-size: 26px;

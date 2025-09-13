@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { NavigationItem } from '../../types/app.types';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [CommonModule, RouterModule, TranslatePipe, IconComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
@@ -31,28 +32,28 @@ export class SidebarComponent implements OnInit, OnDestroy {
     {
       label: 'navigation.dashboard',
       route: '/dashboard',
-      icon: 'dashboard',
+      icon: 'assets/icons/dashboard.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.risk',
       route: '/risk',
-      icon: 'warning',
+      icon: 'assets/icons/alert.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.remediation',
       route: '/remediation',
-      icon: 'security',
+      icon: 'assets/icons/cuboid.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.vulnerabilities',
       route: '/vulnerabilities',
-      icon: 'bug_report',
+      icon: 'assets/icons/vulnerability.svg',
       active: true,
       functional: true,
     },
@@ -60,21 +61,21 @@ export class SidebarComponent implements OnInit, OnDestroy {
     {
       label: 'navigation.link1',
       route: '/link1',
-      icon: 'play_circle',
+      icon: 'assets/icons/plug.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.link2',
       route: '/link2',
-      icon: 'book',
+      icon: 'assets/icons/doc.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.link3',
       route: '/link3',
-      icon: 'laptop',
+      icon: 'assets/icons/ladder.svg',
       active: false,
       functional: false,
     },
@@ -84,14 +85,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
     {
       label: 'navigation.settings',
       route: '/profile',
-      icon: 'settings',
+      icon: 'assets/icons/setting.svg',
       active: false,
       functional: false,
     },
     {
       label: 'navigation.notifications',
       route: '/notifications',
-      icon: 'notifications',
+      icon: 'assets/icons/notification.svg',
       active: false,
       functional: false,
     },
@@ -116,6 +117,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     try {
       this.toggleSidebar.emit();
     } catch (error) {
+      // eslint-disable-next-line no-undef
       console.error('Error emitting sidebar toggle:', error);
     }
   }
@@ -133,6 +135,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     return iconMap[icon] || 'default-icon';
   }
 
+  // eslint-disable-next-line no-undef
   onNavigationClick(item: NavigationItem, event: Event): void {
     event.preventDefault();
 

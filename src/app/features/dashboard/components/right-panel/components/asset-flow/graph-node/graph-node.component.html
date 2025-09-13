@@ -14,12 +14,19 @@
       <span class="material-icons-outlined">person</span>
     </div>
     }
+
     <div
       class="server-icon"
       aria-hidden="true"
       [ngClass]="{ 'initial-node': initialNode }"
     >
-      <span class="material-icons-outlined">{{ icon ?? "dns" }}</span>
+      @if(customIcon){
+      <app-icon [src]="customIcon" [color]="'#1874de'"></app-icon>
+      } @else if(icon){
+      <span class="material-icons-outlined">{{ icon }}</span>
+      } @else{
+      <span class="material-icons-outlined">dns</span>
+      }
     </div>
     <span class="graph-node__title">{{ title }}</span>
   </div>

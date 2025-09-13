@@ -112,7 +112,7 @@
     .navigation-section__item {
       display: flex;
       align-items: center;
-      gap: $spacing-md;
+      gap: $spacing-sm;
       padding: 1rem 1.2rem;
       font-size: $font-size-sm;
       border-radius: $border-radius-lg;
@@ -122,24 +122,28 @@
       text-decoration: none;
       user-select: none;
       font-weight: 600;
+      transition: all 0.2s ease;
 
-      .material-icons {
-        color: var(--grey-500);
-        font-size: $font-size-xl;
+      .icon {
+        fill: var(--grey-500) !important;
+        height: $font-size-xl;
+        width: $font-size-xl;
+        line-height: 25px;
       }
 
       &:hover {
         background-color: var(--background-hover);
-        .material-icons {
-          color: black;
+        .icon {
+          fill: black !important;
         }
       }
 
       &.active {
         background-color: var(--background-hover);
 
-        .material-icons {
-          color: black;
+        .icon,
+        svg {
+          fill: black !important;
         }
       }
     }

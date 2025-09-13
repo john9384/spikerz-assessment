@@ -52,7 +52,9 @@
         [attr.aria-current]="item.route === currentRoute ? 'page' : null"
         [attr.aria-disabled]="!item.functional"
       >
-        <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
+        <span class="icon" aria-hidden="true">
+          <app-icon src="{{ item.icon }}" color="grey"></app-icon>
+        </span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
@@ -74,7 +76,9 @@
         [attr.aria-current]="item.route === currentRoute ? 'page' : null"
         [attr.aria-disabled]="!item.functional"
       >
-        <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
+        <span class="icon" aria-hidden="true">
+          <app-icon src="{{ item.icon }}" color="grey"></app-icon>
+        </span>
         <span>{{ item.label | translate }}</span>
       </li>
       }
