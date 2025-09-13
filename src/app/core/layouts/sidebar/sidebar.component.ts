@@ -7,7 +7,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { NavigationItem } from '../../types/app.types';
 
@@ -24,30 +24,37 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   currentRoute = '';
 
+  // eslint-disable-next-line no-unused-vars
+  constructor(private router: Router) {}
+
   navigationItems: NavigationItem[] = [
     {
       label: 'navigation.dashboard',
       route: '/dashboard',
       icon: 'dashboard',
       active: true,
+      functional: true,
     },
     {
       label: 'navigation.remediation',
       route: '/remediation',
       icon: 'security',
       active: false,
+      functional: true,
     },
     {
       label: 'navigation.vulnerabilities',
       route: '/vulnerabilities',
       icon: 'bug_report',
       active: false,
+      functional: false,
     },
     {
       label: 'navigation.risk',
       route: '/risk',
       icon: 'warning',
       active: false,
+      functional: false,
     },
   ];
 
@@ -57,12 +64,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
       route: '/profile',
       icon: 'person',
       active: false,
+      functional: false,
     },
     {
       label: 'navigation.notifications',
       route: '/notifications',
       icon: 'notifications',
       active: false,
+      functional: false,
     },
   ];
 
@@ -100,5 +109,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
       settings: 'assets/icons/dashboard.svg',
     };
     return iconMap[icon] || 'default-icon';
+  }
+
+  onNavigationClick(item: NavigationItem, event: Event): void {
+    event.preventDefault();
+
+    if (item.functional) {
+      this.router.navigate([item.route]);
+    }
+    // If not functional, do nothing - no navigation occurs
   }
 }

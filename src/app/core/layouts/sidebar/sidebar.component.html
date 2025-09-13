@@ -44,11 +44,14 @@
       @for (item of navigationItems; track item) {
       <li
         class="navigation-section__item"
-        [routerLink]="item.route"
+        [class.non-functional]="!item.functional"
+        [routerLink]="item.functional ? item.route : null"
         routerLinkActive="active"
+        (click)="onNavigationClick(item, $event)"
         role="listitem"
         tabindex="0"
         [attr.aria-current]="item.route === currentRoute ? 'page' : null"
+        [attr.aria-disabled]="!item.functional"
       >
         <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>
@@ -63,11 +66,14 @@
       @for (item of secondaryNavigationItems; track item) {
       <li
         class="navigation-section__item"
-        [routerLink]="item.route"
+        [class.non-functional]="!item.functional"
+        [routerLink]="item.functional ? item.route : null"
         routerLinkActive="active"
+        (click)="onNavigationClick(item, $event)"
         role="listitem"
         tabindex="0"
         [attr.aria-current]="item.route === currentRoute ? 'page' : null"
+        [attr.aria-disabled]="!item.functional"
       >
         <span class="material-icons" aria-hidden="true">{{ item.icon }}</span>
         <span>{{ item.label | translate }}</span>

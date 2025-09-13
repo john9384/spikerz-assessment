@@ -109,6 +109,7 @@ export type NavigationItem = {
   children?: NavigationItem[];
   permissions?: string[];
   active?: boolean;
+  functional?: boolean;
 };
 
 // Notification types

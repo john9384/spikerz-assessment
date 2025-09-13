@@ -140,6 +140,28 @@
           color: black;
         }
       }
+
+      &.non-functional {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+
+        .material-icons {
+          color: var(--grey-400);
+        }
+
+        span:not(.material-icons) {
+          color: var(--grey-400);
+        }
+
+        &:hover {
+          background-color: transparent;
+
+          .material-icons {
+            color: var(--grey-400);
+          }
+        }
+      }
     }
 
     @media (max-width: 768px) {
