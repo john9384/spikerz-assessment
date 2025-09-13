@@ -4,11 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  cursor: pointer;
   &__title {
     font-size: 11px;
     font-weight: 700;
   }
-  cursor: pointer;
 }
 .server-icon {
   width: 52px;

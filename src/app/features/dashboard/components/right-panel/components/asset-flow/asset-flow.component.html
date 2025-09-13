@@ -9,13 +9,14 @@
       aria-label="Network topology diagram showing firewall, load balancer, web server, API gateway, and database connections"
     >
       <span class="node node-1" role="img" aria-label="Firewall node">
-        <app-graph-node [title]="'dashboard.asset_flow.firewall' | translate"
+        <app-graph-node
+          [title]="'dashboard.asset_flow.firewall' | translate"
+          [position]="'right'"
           ><div tooltip-content>
             <app-node-tooltip-card
               title="Loremipsum"
               icon="firewall"
               [sections]="getTooltipSections('firewall')"
-              position="right"
             >
             </app-node-tooltip-card>
           </div>
@@ -25,6 +26,7 @@
       <span class="node node-2" role="img" aria-label="Load balancer node">
         <app-graph-node
           [title]="'dashboard.asset_flow.load_balancer' | translate"
+          [position]="'top'"
         >
           <div tooltip-content>
             <app-node-tooltip-card
@@ -39,7 +41,10 @@
       </span>
       <span class="edge edge-2" aria-hidden="true">&nbsp;</span>
       <span class="node node-3" role="img" aria-label="Web server node">
-        <app-graph-node [title]="'dashboard.asset_flow.web_server' | translate">
+        <app-graph-node
+          [title]="'dashboard.asset_flow.web_server' | translate"
+          [position]="'left'"
+        >
           <div tooltip-content>
             <app-node-tooltip-card
               title="Loremipsum"
@@ -57,10 +62,10 @@
       <span class="node node-4" role="img" aria-label="API gateway node">
         <app-graph-node
           [title]="'dashboard.asset_flow.api_gateway' | translate"
+          [position]="'left'"
         >
           <div tooltip-content>
             <app-node-tooltip-card
-              position="bottom"
               title="Loremipsum"
               icon="api"
               [sections]="getTooltipSections('apiGateway')"
@@ -70,7 +75,10 @@
         </app-graph-node>
       </span>
       <span class="node node-5" role="img" aria-label="Database node">
-        <app-graph-node [title]="'dashboard.asset_flow.database' | translate">
+        <app-graph-node
+          [title]="'dashboard.asset_flow.database' | translate"
+          [position]="'left'"
+        >
           <div tooltip-content>
             <app-node-tooltip-card
               title="Loremipsum"
