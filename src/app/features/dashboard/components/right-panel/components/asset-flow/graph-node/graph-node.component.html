@@ -5,7 +5,20 @@
     (mouseenter)="tooltipCmp.show()"
     (mouseleave)="tooltipCmp.hide()"
   >
-    <div class="server-icon" aria-hidden="true">
+    @if(errorIcon){
+    <div class="error-icon" aria-hidden="true">
+      <span class="material-icons-outlined">verified_user</span>
+    </div>
+    } @if(userIcon){
+    <div class="user-icon" aria-hidden="true">
+      <span class="material-icons-outlined">person</span>
+    </div>
+    }
+    <div
+      class="server-icon"
+      aria-hidden="true"
+      [ngClass]="{ 'initial-node': initialNode }"
+    >
       <span class="material-icons-outlined">{{ icon ?? "dns" }}</span>
     </div>
     <span class="graph-node__title">{{ title }}</span>

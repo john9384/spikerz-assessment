@@ -5,11 +5,39 @@
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
+  position: relative;
   &__title {
     font-size: 11px;
     font-weight: 700;
   }
 }
+
+.user-icon,
+.error-icon {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  .material-icons-outlined {
+    color: white;
+    font-size: 16px;
+  }
+}
+.user-icon {
+  background: #7a45ff;
+}
+.error-icon {
+  background: #e5372b;
+}
+
 .server-icon {
   width: 52px;
   height: 52px;
@@ -49,5 +77,12 @@
   &:focus {
     outline: 2px solid var(--primary-300);
     outline-offset: 2px;
+  }
+}
+
+.initial-node {
+  background: #fff1f0;
+  .material-icons-outlined {
+    color: #e5372b;
   }
 }

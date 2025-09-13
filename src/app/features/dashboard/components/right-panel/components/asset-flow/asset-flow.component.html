@@ -12,7 +12,9 @@
         <app-graph-node
           [title]="'dashboard.asset_flow.firewall' | translate"
           [position]="'right'"
-          [icon]="'mask'"
+          [icon]="'rss_feed'"
+          [userIcon]="true"
+          [initialNode]="true"
           ><div tooltip-content>
             <app-node-tooltip-card
               title="Firewall Security"
@@ -64,6 +66,7 @@
         <app-graph-node
           [title]="'dashboard.asset_flow.api_gateway' | translate"
           [position]="'left'"
+          [errorIcon]="true"
         >
           <div tooltip-content>
             <app-node-tooltip-card
@@ -79,6 +82,7 @@
         <app-graph-node
           [title]="'dashboard.asset_flow.database' | translate"
           [position]="'left'"
+          [errorIcon]="true"
         >
           <div tooltip-content>
             <app-node-tooltip-card
