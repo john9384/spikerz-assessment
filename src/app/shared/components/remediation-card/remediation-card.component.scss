@@ -2,7 +2,7 @@
 
 .asset-card {
   box-shadow: $shadow-sm;
-  border: 1px solid $border-primary;
+  border: 1px solid var(--border-primary);
   background-color: $background-primary;
   padding: $card-padding;
   border-radius: $card-border-radius;
@@ -21,7 +21,7 @@
     font-family: Public Sans;
     font-weight: 700;
     font-style: bold;
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
     line-height: 22px;
     letter-spacing: 1%;
     text-transform: capitalize;
@@ -54,9 +54,11 @@
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
+        font-size: $font-size-xs;
+        font-weight: 600;
 
         .text-small {
-          font-size: 11px;
+          font-size: $font-size-2xs;
           font-weight: 400;
         }
       }

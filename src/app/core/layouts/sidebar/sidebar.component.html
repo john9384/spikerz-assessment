@@ -44,7 +44,6 @@
       @for (item of navigationItems; track item) {
       <li
         class="navigation-section__item"
-        [class.non-functional]="!item.functional"
         [routerLink]="item.functional ? item.route : null"
         routerLinkActive="active"
         (click)="onNavigationClick(item, $event)"

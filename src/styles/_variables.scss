@@ -226,13 +226,11 @@ $background-hover: #e9faf0;
 $border-primary: $secondary-200;
 $border-secondary: $secondary-300;
 
-// Shadow Variables (SCSS)
 $shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 $shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 $shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 $shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-// Transition Variables
 $transition-fast: 0.15s ease-in-out;
 $transition-base: 0.2s ease-in-out;
 $transition-slow: 0.3s ease-in-out;
@@ -242,6 +240,7 @@ $font-size-2xs: 0.5625rem; // 9px
 $font-size-xs: 0.75rem; // 12px
 $font-size-sm: 0.875rem; // 14px
 $font-size-base: 0.9375rem; // 15px
+$font-size-md: 1rem; // 16px
 $font-size-lg: 1.125rem; // 18px
 $font-size-xl: 1.25rem; // 20px
 $font-size-2xl: 1.5rem; // 24px

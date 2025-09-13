@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/vulnerabilities',
     pathMatch: 'full',
   },
   {
@@ -23,8 +23,8 @@ export const routes: Routes = [
   {
     path: 'vulnerabilities',
     loadComponent: () =>
-      import('./features/vulnerabilities/vulnerabilities.component').then(
-        (m) => m.VulnerabilitiesComponent
+      import('./features/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
       ),
   },
   {
@@ -41,6 +41,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/dashboard',
+    redirectTo: '/vulnerabilities',
   },
 ];

@@ -3,14 +3,6 @@
     "title": "Spikerz Security Platform",
     "welcome": "Welcome to Spikerz Security Dashboard"
   },
-  "navigation": {
-    "dashboard": "Dashboard",
-    "remediation": "Remediation",
-    "vulnerabilities": "Vulnerabilities",
-    "risk": "Risk Assessment",
-    "profile": "Profile",
-    "notifications": "Notifications"
-  },
   "dashboard": {
     "title": "Dashboard",
     "security_score": "Security Score",
@@ -195,7 +187,11 @@
     "vulnerabilities": "Vulnerabilities",
     "risk": "Risk Assessment",
     "profile": "Profile",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "link1": "Link 1",
+    "link2": "Link 2",
+    "link3": "Link 3"
   },
   "auth": {
     "login": "Login",

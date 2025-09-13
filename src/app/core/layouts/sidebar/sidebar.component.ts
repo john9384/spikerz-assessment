@@ -32,20 +32,6 @@ export class SidebarComponent implements OnInit, OnDestroy {
       label: 'navigation.dashboard',
       route: '/dashboard',
       icon: 'dashboard',
-      active: true,
-      functional: true,
-    },
-    {
-      label: 'navigation.remediation',
-      route: '/remediation',
-      icon: 'security',
-      active: false,
-      functional: true,
-    },
-    {
-      label: 'navigation.vulnerabilities',
-      route: '/vulnerabilities',
-      icon: 'bug_report',
       active: false,
       functional: false,
     },
@@ -56,13 +42,49 @@ export class SidebarComponent implements OnInit, OnDestroy {
       active: false,
       functional: false,
     },
+    {
+      label: 'navigation.remediation',
+      route: '/remediation',
+      icon: 'security',
+      active: false,
+      functional: false,
+    },
+    {
+      label: 'navigation.vulnerabilities',
+      route: '/vulnerabilities',
+      icon: 'bug_report',
+      active: true,
+      functional: true,
+    },
+
+    {
+      label: 'navigation.link1',
+      route: '/link1',
+      icon: 'play_circle',
+      active: false,
+      functional: false,
+    },
+    {
+      label: 'navigation.link2',
+      route: '/link2',
+      icon: 'book',
+      active: false,
+      functional: false,
+    },
+    {
+      label: 'navigation.link3',
+      route: '/link3',
+      icon: 'laptop',
+      active: false,
+      functional: false,
+    },
   ];
 
   secondaryNavigationItems: NavigationItem[] = [
     {
-      label: 'navigation.profile',
+      label: 'navigation.settings',
       route: '/profile',
-      icon: 'person',
+      icon: 'settings',
       active: false,
       functional: false,
     },

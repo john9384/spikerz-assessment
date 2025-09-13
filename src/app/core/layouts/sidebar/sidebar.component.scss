@@ -114,16 +114,18 @@
       align-items: center;
       gap: $spacing-md;
       padding: 1rem 1.2rem;
-      font-size: $font-size-base;
-      border-radius: $border-radius-md;
+      font-size: $font-size-sm;
+      border-radius: $border-radius-lg;
       color: var(--grey-700);
       cursor: pointer;
       transition: all 0.2s ease;
       text-decoration: none;
       user-select: none;
+      font-weight: 600;
 
       .material-icons {
-        color: var(--grey-700);
+        color: var(--grey-500);
+        font-size: $font-size-xl;
       }
 
       &:hover {
@@ -140,28 +142,6 @@
           color: black;
         }
       }
-
-      &.non-functional {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-
-        .material-icons {
-          color: var(--grey-400);
-        }
-
-        span:not(.material-icons) {
-          color: var(--grey-400);
-        }
-
-        &:hover {
-          background-color: transparent;
-
-          .material-icons {
-            color: var(--grey-400);
-          }
-        }
-      }
     }
 
     @media (max-width: 768px) {
@@ -175,7 +155,7 @@
     justify-content: space-between;
     gap: $spacing-sm;
     font-size: $font-size-xs;
-    padding-block: $spacing-lg;
+    padding-block: $spacing-md;
     border-top: 1px solid var(--border-primary);
 
     .user-info {
@@ -187,13 +167,13 @@
         height: 50px;
         border-radius: 50%;
         overflow: hidden;
-        background-color: var(--grey-50);
+        background-color: #999999;
         display: flex;
         align-items: center;
         justify-content: center;
         .material-icons {
           font-size: $font-size-4xl;
-          color: var(--grey-700);
+          color: var(--white);
         }
         img {
           width: 100%;

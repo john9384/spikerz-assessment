@@ -1,13 +1,15 @@
+@use "../../../../../styles/variables" as *;
+
 .central-panel {
   background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 0;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-
+  height: calc(100dvh - 50px);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   overflow-y: auto;
   scrollbar-width: none;
 
@@ -19,38 +21,46 @@
 
     .paragraph__title {
       color: var(--primary-700);
-      font-size: 20px;
+      font-weight: 700;
+      font-size: $font-size-xl;
     }
 
     .paragraph__content {
       color: var(--text-secondary);
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 
   .details {
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
-    padding: 1rem 0;
+    padding: 0;
   }
+
+  .details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .details-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 8px 0;
-    font-size: 14px;
+    font-size: $font-size-sm;
   }
 
   .details-label {
     font-weight: 600;
-    color: #333;
+    color: var(--grey-800);
+    flex: 1;
   }
 
   .details-value {
-    color: #555;
+    color: var(--text-primary);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    flex: 1;
   }
 
   .material-icons {
@@ -63,5 +73,15 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    h3 {
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: $font-size-md;
+    }
+    .remediation-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 }
