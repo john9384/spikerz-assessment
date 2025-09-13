@@ -49,7 +49,7 @@
   }
 
   &__header {
-    color: #858d9d;
+    color: var(--grey-500);
     font-size: $font-size-sm;
   }
 
@@ -61,7 +61,7 @@
     font-size: 13px;
     line-height: 1;
     height: 50px;
-    color: #858d9d;
+    color: var(--grey-500);
     .material-icons-outlined {
       font-size: $font-size-xl;
     }
@@ -83,7 +83,7 @@
   }
 
   .asset-details h3 {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     font-weight: 500;
     margin-bottom: 2px;
     color: var(--text-primary);

@@ -1,12 +1,11 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { TooltipComponent } from '../../../../../../../shared/components/tooltip/tooltip.component';
-import { IconComponent } from '../../../../../../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-graph-node',
   standalone: true,
-  imports: [CommonModule, TooltipComponent, IconComponent],
+  imports: [CommonModule, TooltipComponent],
   templateUrl: './graph-node.component.html',
   styleUrls: ['./graph-node.component.scss'],
 })
