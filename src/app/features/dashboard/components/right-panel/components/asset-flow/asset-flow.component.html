@@ -25,7 +25,9 @@
           </div>
         </app-graph-node>
       </span>
-      <span class="edge edge-1" aria-hidden="true">&nbsp;</span>
+      <span class="edge" aria-hidden="true"
+        ><img src="assets/icons/arrow.svg"
+      /></span>
       <span class="node node-2" role="img" aria-label="Load balancer node">
         <app-graph-node
           [title]="'dashboard.asset_flow.load_balancer' | translate"
@@ -42,7 +44,9 @@
           </div>
         </app-graph-node>
       </span>
-      <span class="edge edge-2" aria-hidden="true">&nbsp;</span>
+      <span class="edge" aria-hidden="true"
+        ><img src="assets/icons/arrow.svg"
+      /></span>
       <span class="node node-3" role="img" aria-label="Web server node">
         <app-graph-node
           [title]="'dashboard.asset_flow.web_server' | translate"
@@ -58,45 +62,45 @@
           </div>
         </app-graph-node>
       </span>
-      <span class="edge edge-3" aria-hidden="true">&nbsp;</span>
 
-      <span class="edge edge-4" aria-hidden="true">&nbsp;</span>
-      <span class="edge edge-5" aria-hidden="true">&nbsp;</span>
-      <span class="node node-4" role="img" aria-label="API gateway node">
-        <app-graph-node
-          [title]="'dashboard.asset_flow.api_gateway' | translate"
-          [position]="'left'"
-          [errorIcon]="true"
-        >
-          <div tooltip-content>
-            <app-node-tooltip-card
-              title="API Gateway"
-              icon="api"
-              [sections]="getTooltipSections('apiGateway')"
-            >
-            </app-node-tooltip-card>
-          </div>
-        </app-graph-node>
-      </span>
-      <span class="node node-5" role="img" aria-label="Database node">
-        <app-graph-node
-          [title]="'dashboard.asset_flow.database' | translate"
-          [position]="'left'"
-          [errorIcon]="true"
-        >
-          <div tooltip-content>
-            <app-node-tooltip-card
-              title="Database Server"
-              icon="database"
-              [sections]="getTooltipSections('database')"
-            >
-            </app-node-tooltip-card>
-          </div>
-        </app-graph-node>
-      </span>
+      <span class="edge" aria-hidden="true"
+        ><img src="assets/icons/branch-arrow.svg"
+      /></span>
 
-      <span class="edge edge-6" aria-hidden="true">&nbsp;</span>
-      <span class="edge edge-7" aria-hidden="true">&nbsp;</span>
+      <div class="branched-nodes">
+        <span class="node node-4" role="img" aria-label="API gateway node">
+          <app-graph-node
+            [title]="'dashboard.asset_flow.api_gateway' | translate"
+            [position]="'left'"
+            [errorIcon]="true"
+          >
+            <div tooltip-content>
+              <app-node-tooltip-card
+                title="API Gateway"
+                icon="api"
+                [sections]="getTooltipSections('apiGateway')"
+              >
+              </app-node-tooltip-card>
+            </div>
+          </app-graph-node>
+        </span>
+        <span class="node node-5" role="img" aria-label="Database node">
+          <app-graph-node
+            [title]="'dashboard.asset_flow.database' | translate"
+            [position]="'left'"
+            [errorIcon]="true"
+          >
+            <div tooltip-content>
+              <app-node-tooltip-card
+                title="Database Server"
+                icon="database"
+                [sections]="getTooltipSections('database')"
+              >
+              </app-node-tooltip-card>
+            </div>
+          </app-graph-node>
+        </span>
+      </div>
     </div>
 
     <div class="legend" role="list" aria-label="Risk level legend">
