@@ -8,6 +8,7 @@
   flex-direction: column;
   gap: 0.5rem;
   min-width: 250px;
+  width: 100%;
   max-width: 300px &__header {
     display: flex;
     align-items: center;
@@ -42,6 +43,7 @@
     align-items: center;
     margin-bottom: 0.5rem;
     flex-wrap: wrap;
+    gap: 0.2rem;
 
     .material-icons-outlined {
       font-size: 16px;
@@ -64,6 +66,7 @@
     }
     &__orange-text {
       color: #f59e0b;
+      background: #fef3c7;
     }
     &__ip {
       background: #ede9fe;

@@ -70,7 +70,39 @@
       "critical": "Critical",
       "high": "High",
       "medium": "Medium",
-      "low": "Low"
+      "low": "Low",
+      "tooltips": {
+        "firewall": {
+          "label": "Security Policy",
+          "status": "Active Rules",
+          "connections": "Blocked Attempts",
+          "ip_range": "Allowed IP Range"
+        },
+        "load_balancer": {
+          "label": "Load Distribution",
+          "status": "Active Connections",
+          "servers": "Backend Servers",
+          "health_check": "Health Status"
+        },
+        "web_server": {
+          "label": "Web Services",
+          "status": "Running Services",
+          "requests": "HTTP Requests",
+          "ssl_status": "SSL Certificate"
+        },
+        "api_gateway": {
+          "label": "API Management",
+          "status": "Active Endpoints",
+          "rate_limit": "Rate Limiting",
+          "authentication": "Auth Tokens"
+        },
+        "database": {
+          "label": "Database Services",
+          "status": "Connection Pool",
+          "queries": "Query Performance",
+          "backup": "Backup Status"
+        }
+      }
     }
   },
   "remediation": {

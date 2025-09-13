@@ -11,5 +11,6 @@ import { TooltipComponent } from '../../../../../../../shared/components/tooltip
 })
 export class GraphNodeComponent {
   @Input() title: string = '';
+  @Input() icon: string | null = null;
   @Input() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
 }

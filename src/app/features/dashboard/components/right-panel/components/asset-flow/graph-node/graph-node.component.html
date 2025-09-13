@@ -6,7 +6,7 @@
     (mouseleave)="tooltipCmp.hide()"
   >
     <div class="server-icon" aria-hidden="true">
-      <span class="material-icons-outlined">dns</span>
+      <span class="material-icons-outlined">{{ icon ?? "dns" }}</span>
     </div>
     <span class="graph-node__title">{{ title }}</span>
   </div>

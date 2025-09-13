@@ -12,9 +12,10 @@
         <app-graph-node
           [title]="'dashboard.asset_flow.firewall' | translate"
           [position]="'right'"
+          [icon]="'mask'"
           ><div tooltip-content>
             <app-node-tooltip-card
-              title="Loremipsum"
+              title="Firewall Security"
               icon="firewall"
               [sections]="getTooltipSections('firewall')"
             >
@@ -30,7 +31,7 @@
         >
           <div tooltip-content>
             <app-node-tooltip-card
-              title="Loremipsum"
+              title="Load Balancer"
               ipAddress="1.2.3.4"
               icon="dns"
               [sections]="getTooltipSections('loadBalancer')"
@@ -47,7 +48,7 @@
         >
           <div tooltip-content>
             <app-node-tooltip-card
-              title="Loremipsum"
+              title="Web Server"
               icon="web"
               [sections]="getTooltipSections('webServer')"
             >
@@ -66,7 +67,7 @@
         >
           <div tooltip-content>
             <app-node-tooltip-card
-              title="Loremipsum"
+              title="API Gateway"
               icon="api"
               [sections]="getTooltipSections('apiGateway')"
             >
@@ -81,7 +82,7 @@
         >
           <div tooltip-content>
             <app-node-tooltip-card
-              title="Loremipsum"
+              title="Database Server"
               icon="database"
               [sections]="getTooltipSections('database')"
             >

@@ -23,42 +23,93 @@ export class AssetFlowComponent {
   tooltipSections: Record<string, TooltipSection[]> = {
     firewall: [
       {
-        label: 'Lorem',
+        label: 'Security Policy',
         values: [
-          { type: 'text', value: 'Loremipsum' },
-          { type: 'orange-text', value: 'Loremipsum' },
+          {
+            type: 'text',
+            value: 'Active Rules',
+          },
+          {
+            type: 'orange-text',
+            value: 'Blocked Attempts',
+          },
           { type: 'ip', value: '1.2.3.4' },
-          { type: 'text-ip', value: 'Lorem 1234,5678' },
+          {
+            type: 'text-ip',
+            value: 'Allowed IP Range',
+          },
         ],
       },
     ],
     loadBalancer: [
       {
-        label: 'Lorem',
+        label: 'Load Distribution',
         values: [
-          { type: 'text', value: 'Loremipsum' },
+          {
+            type: 'text',
+            value: 'Active Connections',
+          },
           { type: 'ip', value: '1.2.3.4' },
-          { type: 'text-ip', value: 'Lorem 1234,5678' },
+          {
+            type: 'text-ip',
+            value: 'Health Status',
+          },
         ],
       },
     ],
     webServer: [
       {
-        label: 'Lorem',
+        label: 'Web Services',
         values: [
-          { type: 'text', value: 'Loremipsum' },
+          {
+            type: 'text',
+            value: 'Running Services',
+          },
           { type: 'ip', value: '1.2.3.4' },
-          { type: 'text-ip', value: 'Lorem 1234,5678' },
+          {
+            type: 'text-ip',
+            value: 'SSL Certificate',
+          },
+        ],
+      },
+      {
+        label: 'Load Distribution',
+        values: [
+          {
+            type: 'text',
+            value: 'Active Connections',
+          },
+          { type: 'ip', value: '1.2.3.4' },
+          {
+            type: 'text-ip',
+            value: 'Health Status',
+          },
         ],
       },
     ],
     apiGateway: [
       {
-        label: 'Lorem',
+        label: 'API Management',
         values: [
-          { type: 'text', value: 'Loremipsum' },
+          {
+            type: 'text',
+            value: 'Active Endpoints',
+          },
           { type: 'ip', value: '1.2.3.4' },
-          { type: 'text-ip', value: 'Lorem 1234,5678' },
+          {
+            type: 'text-ip',
+            value: 'Auth Tokens',
+          },
+        ],
+      },
+    ],
+    database: [
+      {
+        label: 'Database Services',
+        values: [
+          { type: 'text', value: 'Connection Pool' },
+          { type: 'ip', value: '1.2.3.4' },
+          { type: 'text-ip', value: 'Backup Status' },
         ],
       },
     ],
